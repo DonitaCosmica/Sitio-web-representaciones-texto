@@ -1,0 +1,25 @@
+@import url("../css/styles.css");
+
+section {
+  width: 100%;
+  top: 3rem;
+  height: auto;
+  margin-bottom: 1.2rem;
+}
+
+.info {
+  margin: 0 10.5rem;
+}
+
+.titulo {
+  padding: 0.85rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2b5164;
+}
+
+p {
+  font-size: 0.95rem;
+  color: #2b5164;
+}
