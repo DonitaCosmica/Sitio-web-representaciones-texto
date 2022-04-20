@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/articulos.css">
+
+    <title>Texto | PostScript</title>
+</head>
+<body>
+
+    <header>
+		<div class="container">
+			<input type="checkbox" name="" id="check">
+			<div class="logo-container">
+				<a class="logo" href="../index.html">Estándares <span>Multi</span>Media</a>
+			</div>
+			<div class="nav-btn">
+				<div class="nav-links">
+					<ul>
+						<li class="nav-link dropdown-btn" style="--i: 0.6s">
+							<a href="../fundamentos/index.html">Fundamentos</a>
+
+							<ul>
+								<li class="dropdown-link">
+									<a href="../fundamentos/multimedia.html">Multimedia</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="../fundamentos/compresion.html">Compresión</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="../fundamentos/algoritmos.html">Algoritmos</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="../fundamentos/recursos.html">Recursos Informativos</a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-link dropdown-btn" style="--i: 0.85s">
+							<a href="./index.html">Texto</a>
+
+							<ul>
+								<li class="dropdown-link">
+									<a href="./ascii.html">ASCII</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="./unicode.html">Unicode</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="./postscript.html">PostScript</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="./pdf.html">PDF</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="./rtf.html">RTF</a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-link dropdown-btn" style="--i: 1.1s">
+							<a href="../imagen/index.html">Imagen</a>
+
+							<ul>
+								<li class="dropdown-link">
+									<a href="../imagen/jpeg.html">JPEG</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="../imagen/png.html">PNG</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="../imagen/bmp.html">BMP</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="../imagen/gif.html">GIF</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="../imagen/wmf.html">WMF</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="hamburger-menu-container">
+				<div class="hamburger-menu">
+					<div></div>
+				</div>
+			</div>
+		</div>
+  	</header> <!-- Barra de navegación -->
+    
+    <section class="encabezado-articulo">
+        <h1 class="titulo">PostScript</h1>
+
+        <h3>Texto</h3>
+    </section>
+    
+    <section class="contenido">
+        <h2>¿Qué es?</h2>
+
+        <p>Es un lenguaje de descripción de página.Es usado para decirle a una máquina destinada a imprimir cómo y qué debe imprimir.</p>
+
+        <p>Extensión: .ps</p>
+    </section>
+
+    <section class="contenido">
+        <h2>Propósito del Estándar</h2>
+
+        <p>
+            En los comienzos de los 80, se utilizaban los llamados sistemas de fotocomposición o preprensa, que eran tecnológicamente complejos y cerrados.
+        </p>
+
+        <p>
+            Fue desarrollado por Adobe Systems Inc. como una herramienta independiente de la plataforma y el dispositivo para la descripción de páginas.
+        </p>
+
+        <p>
+            PostScript inicialmente se diferenció por utilizar un lenguaje de programación completo para describir una imagen de impresión.
+        </p>
+
+        <p>Implementó la composición de imágenes como:</p>
+
+        <ul>
+            <li>
+                <p>Líneas horizontales</p>
+            </li>
+
+            <li>
+                <p>Píxeles al vuelo</p>
+            </li>
+
+            <li>
+                <p>Descripciones de curvas mediante “curvas de Bezier”</p>
+            </li>
+
+            <li>
+                <p>Tipos de letra de alta calidad a baja resolución</p>
+            </li>
+        </ul>
+    </section>
+
+    <section class="contenido">
+        <h2>Historia</h2>
+
+        <ul>
+            <li>
+                <p>
+                    Se reconoce la necesidad de algún mecanismo estándar para definir los contenidos de una página.
+                </p>
+            </li>
+
+            <li>
+                <p>Xerox lanza así la iniciativa InterPress como método estándar de descripción de páginas.</p>
+            </li>
+
+            <li>
+                <p>
+                    Los trabajadores Warnock y su jefe, Charles Geschke, intentan convertir InterPress en un producto comercial. Al no obtener resultados,  en 1982 abandonan Xerox y fundan “Adobe”.
+                </p>
+            </li>
+
+            <li>
+                <p>
+                    Desarrollan herramientas para que otros fabricantes pudieran controlar sus impresoras. Tomaron como base InterPress y derivaron de él un lenguaje más simple, al que denominaron PostScript.
+                </p>
+            </li>
+        </ul>
+    </section>
+
+    <section class="contenido">
+        <h2>Modificaciones y Actualizaciones</h2>
+
+        <ul>
+            <li>
+                <p>Nivel 1</p>
+                <p>
+                    Capacidad de trabajar con:
+                </p>
+
+                <ul>
+                    <li>Objetos vectoriales</li>
+                    <li>Fuentes de contorno</li>
+                    <li>Lineaturas de semitonos profesionales</li>
+                    <li>Puntos de semitonos de distintas formas</li>
+                    <li>256 tonos de grises en una impresión</li>
+                </ul>
+
+                <p>
+                    Independencia total del dispositivo, portabilidad entre aparatos y disponibilidad pública del código y su sintaxis, lo que permite a cualquiera escribir un programa que pueda generar ficheros PostScript que aprovechen al máximo la resolución del dispositivo.
+                </p>
+            </li>
+
+            <li>
+                <p>Nivel 2 - 1991</p>
+                
+                <ol>
+                    <li>Gestión de memoria ampliamente mejorada, junto con una mayor velocidad y fiabilidad.</li>
+                    <li>Capacidad de realizar la separación del color dentro del RIP (Intérprete PostScript)</li>
+                    <li>Capacidad de recibir imágenes comprimidas en determinados formatos.</li>
+                    <li>Capacidad de recibir imágenes comprimidas en determinados formatos.</li>
+                    <li>Mejora de los controladores de la impresora.</li>
+                    <li>Mejora de los algoritmos de tramado de semitonos.</li>
+                </ol>
+            </li>
+
+            <li>
+                <p>Nivel 3 - 1997</p>
+                <p>
+                    A fines de 1997, Adobe lanza PostScript 3, donde incorpora el soporte de espacios de color genéricos, y utiliza 12 bits para describir las lineaturas de semitono. Esto permitió llegar a trabajar con hasta 4096 tonos del mismo color.
+                </p>
+
+                <p>
+                    El control mejorado de las sepataciones de color permitió superar la cuatricromía convencional (CMYK)
+                </p>
+
+                <ol>
+                    <li>Hexacromía</li>
+                    <li>Duotonos</li>
+                    <li>Imágenes multicanal</li>
+                </ol>
+            </li>
+        </ul>
+    </section>
+    
+    <section class="contenido">
+        <h2>Recursos Informativos</h2>
+        
+        <div class="lista-tarjetas">
+            <a href="http://informatica.dgenp.unam.mx/recomendaciones/codigo-ascii">
+                <div class="tarjeta-recurso">
+    
+                    <h4>Código ASCII - UNAM</h4>
+
+                    <span class="material-icons">
+                        open_in_new
+                    </span>
+                </div>
+            </a>
+        </div>
+    </section>
+</body>
+</html>

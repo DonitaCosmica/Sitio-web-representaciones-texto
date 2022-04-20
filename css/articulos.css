@@ -1,0 +1,88 @@
+/* Cortado desde los .css individuales de cada pagina (ascii.css, unicode.css, etc) */
+section.contenido {
+    max-width: 768px;
+    margin: 1.6rem auto;
+}
+
+section.contenido > h2 {
+    font-size: 1.6rem;
+    margin: 0.4rem 0 1rem 0;
+}
+
+section.encabezado-articulo {
+    max-width: 1200px;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+  
+section.encabezado-articulo > h1.titulo {
+    text-align: center;
+    color: #2b5164;
+    font-size: 3rem;
+}
+
+section.encabezado-articulo > h3 {
+    text-align: center;
+    color: #515f65;
+    font-size: 1.8rem;
+}
+
+section.encabezado-articulo > img {
+    max-width: 768px;
+    margin: 1.6rem auto;
+}
+  
+p {
+    text-align: justify;
+    font-size: 1rem;
+    line-height: 2rem;
+    color: #2b5164;
+    margin-bottom: 0.4rem;
+}
+
+section.contenido > ul {
+    list-style-type: disc;
+    font-size: 1rem;
+    line-height: 2rem;
+    color: #2b5164;
+}
+
+section.contenido > ul > li {
+    margin-bottom: 0.4rem;
+}
+  
+.list {
+    display: flex;
+    letter-spacing: 5px;
+    margin-top: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+p.fecha {
+    margin-top: 1.6rem;
+    font-weight: 600;
+    color: #214151;
+    font-size: 1.4rem;
+}
+
+.lista-tarjetas {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+}
+
+.lista-tarjetas > a > .tarjeta-recurso {
+    min-height: 4.8rem;
+    max-height: 7rem;
+    /* max-width: 20rem; */
+    margin-left: 1rem;
+    overflow: hidden;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}

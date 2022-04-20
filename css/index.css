@@ -4,6 +4,7 @@ header {
   position: relative;
   top: 0;
   background: #60b4df;
+  padding: 0.8rem;
   width: 100%;
   z-index: 1000;
 }
@@ -30,14 +31,13 @@ a {
 }
 
 .logo-container {
-  flex: 1;
   display: flex;
   align-items: center;
 }
 
 .logo {
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -59,7 +59,7 @@ a {
 
 .nav-links > ul {
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
 }
 
@@ -68,23 +68,27 @@ a {
 }
 
 .nav-link > a {
-  line-height: 3rem;
+  font-weight: 600;
+}
+
+.nav-link > a, ul > li.dropdown-link > a {
+  line-height: 1.8rem;
   color: #fff;
-  padding: 0 0.8rem;
+  padding: 1rem 1.2rem;
   letter-spacing: 1px;
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .nav-link > a > i {
-  margin-left: 0.2rem;
+  margin-left: 0.4rem;
 }
 
-.nav-link:hover > a {
-  transform: scale(1.1);
+.nav-link:hover > a, ul > li.dropdown-link:hover > a {
+  transform: scale(1.05);
 }
 
 .nav-link:hover > .dropdown,
@@ -92,6 +96,17 @@ a {
   transform: translate(0, 0);
   opacity: 1;
   pointer-events: auto;
+}
+
+.nav-links > ul > li > ul {
+  display: none;
+  position: absolute;
+  height: auto;
+  background-color: #60b4df;
+}
+
+.nav-links > ul > li:hover > ul {
+  display: block;
 }
 
 .hamburger-menu-container {
@@ -138,11 +153,10 @@ a {
   transform: translateY(7px);
 }
 
-section {
-  position: relative;
-  height: calc(100vh - 3rem);
-  width: 100%;
+.banner {
   background: url("../img/archivos.jpg") no-repeat top center / cover;
+  height: 100vh;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -155,12 +169,16 @@ section {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(96, 180, 223, 0.5);
+  background-color: rgba(96, 180, 223, 0.6);
 }
 
 .overlay-container {
+  max-width: 65rem;
+  margin: 0 auto;
+  padding: 0 2rem;
   color: #fff;
   font-size: 3.2rem;
+  text-transform: capitalize;
 }
 
 #check {

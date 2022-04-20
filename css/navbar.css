@@ -63,6 +63,15 @@ a {
   align-items: center;
 }
 
+.nav-links > ul > li > ul {
+  display: none;
+  height: auto;
+}
+
+.nav-links > ul > li:hover > ul {
+  display: block;
+}
+
 .nav-link {
   position: relative;
 }
