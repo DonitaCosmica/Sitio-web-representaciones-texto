@@ -4,9 +4,298 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/articulos.css">
+
     <title>Formatos de Imagen</title>
 </head>
 <body>
+
+    <header>
+		<div class="container">
+			<input type="checkbox" name="" id="check">
+			<div class="logo-container">
+				<a class="logo" href="../index.html">Estándares <span>Multi</span>Media</a>
+			</div>
+			<div class="nav-btn">
+				<div class="nav-links">
+					<ul>
+						<li class="nav-link dropdown-btn" style="--i: 0.6s">
+							<a href="../fundamentos/index.html">Fundamentos</a>
+
+							<ul>
+								<li class="dropdown-link">
+									<a href="../fundamentos/multimedia.html">Multimedia</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="../fundamentos/compresion.html">Compresión</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="../fundamentos/algoritmos.html">Algoritmos</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="../fundamentos/recursos.html">Recursos Informativos</a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-link dropdown-btn" style="--i: 0.85s">
+							<a href="./index.html">Texto</a>
+
+							<ul>
+								<li class="dropdown-link">
+									<a href="../texto/ascii.html">ASCII</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="../texto/unicode.html">Unicode</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="../texto/postscript.html">PostScript</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="../texto/pdf.html">PDF</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="../texto/rtf.html">RTF</a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-link dropdown-btn" style="--i: 1.1s">
+							<a href="./index.html">Imagen</a>
+
+							<ul>
+								<li class="dropdown-link">
+									<a href="./jpeg.html">JPEG</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="./png.html">PNG</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="./bmp.html">BMP</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="./gif.html">GIF</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="./wmf.html">WMF</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="./comparacion.html">Comparación</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="./raster.html">Datos Raster</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="hamburger-menu-container">
+				<div class="hamburger-menu">
+					<div></div>
+				</div>
+			</div>
+		</div>
+  	</header> <!-- Barra de navegación -->
     
+    <section class="encabezado-articulo">
+        <h1 class="titulo">Imágenes Digitales</h1>
+    </section>
+    
+	<section class="contenido">
+        <h2>¿Qué es una Imagen Digital?</h2>
+
+        <p>Las imágenes digitales son imágenes que son representadas como un conjunto de datos discretos que pueden ser almacenados, procesados y transferidos por una computadora digital. Estos datos discretos son usados para representar u obtener unidades llamadas "píxeles", que tienen el color de una pequeña área de la imagen original.</p>
+
+		<h3>Tipos</h3>
+
+		<img src="../img/bitmap_vector.jpg" alt="Comparación entre imágenes raster y vectoriales.">
+
+		<p>Existen dos tipos principales de imágenes digitales:</p>
+
+		<ul>
+			<li>
+				<p class="fecha">Vector</p>
+
+				<p>Las imáges vectoriales describen una imagen a través de entidades geométricas basadas en fórmulas matemáticas. Por ejemplo, un círculo en una imagen vectorial es definido por un punto central y un radio. </p>
+
+				<p>Al estar compuestas por entidades geométricas, en vez de píxeles discretos, es posible "aumentar" una imagen vectorial sin que se vean las imperfecciones de una imagen bitmap, dado que la representación geométrica no cambia con el "zoom".</p>
+			</li>
+			<li>
+				<p class="fecha">Mapa de bits (Bitmap o raster)</p>
+
+				<p>Las imágenes bitmap están formadas por una tabla o matriz de píxeles, cada uno con un valor que representa su color.</p>
+			</li>
+		</ul>
+    </section>
+
+	<section class="contenido">
+        <h2>Propiedades de una Imagen</h2>
+
+		<p>Toda imagen digital, independientemente de su uso o fuente, está formada por una colección bidimensional de píxeles. Los píxeles de una imagen pueden ser visualizados en una pantalla, en una hoja impresa, entre otros medios.</p>
+
+		<h3>Modelo de Color</h3>
+
+		<p>Cada pixel de una imagen digital tiene un color asociado. La forma en que una imagen digital representa el color de cada pixel es conocida como su "modelo de color".</p>
+
+		<p>Los dos modelos de color más comunes son RGB y CMYK:</p>
+
+		<ul>
+			<li>
+				<p class="fecha">RGB</p>
+				<p>Está compuesto por tres colores: Rojo, Verde y Azul (Red, Green & Blue). Este modelo representa cualquier color como una suma de las tres magnitudes de rojo, verde y azul. Negro es un 0 absoluto en los tres colores básicos, mientras que el color blanco se obtiene como una sobreposición total de los tres colores.</p>
+
+				<p>El modelo RGB es usado por los pixeles de la gran mayoría de pantallas.</p>
+			</li>
+			<li>
+				<p class="fecha">CMYK</p>
+				<p>Está compuesto por cuatro colores: cian, magenta, amarillo y negro (Cyan, Magenta, Yellow & Key Black). Este modelo representa cualquier color como una resta de las tres magnitudes de sus colores básicos. Blanco es un 0 absoluto en los colores básicos, mientras que el color negro se obtiene como una sobreposición total de los cuatro colores.</p>
+
+				<p>El modelo CMYK suele ser utilizado por impresoras.</p>
+			</li>
+		</ul>
+
+		<p>La siguiente imagen ilustra las diferencias en la composición de colores con los modelos RGB y CMYK.</p>
+
+		<img src="../img/rgb_cmyk.png" alt="Modelos de color RGB y CMYK">
+
+		<h3>Tamaño</h3>
+
+		<p>El tamaño de una imagen es simplemente la cantida de píxeles que la integran. Al ser rectangulares, esta cantidad puede ser obtenida multiplicando los píxeles de ancho por los píxeles de alto de una imagen.</p>
+
+		<p>La unidad de tamaño es el píxel porque no existe una medida única para el tamaño y espaciado de los píxeles en las diferentes pantallas, por lo que intentar medir una imagen en centímetros o pulgadas es imposible.</p>
+
+		<p>Por ejemplo, si una imagen tiene 768 píxeles de ancho y 572 píxeles de alto, su tamaño sería (768px * 572px), lo que equivale a 439,296 píxeles.</p>
+
+		<h3>Resolución</h3>
+
+		<p>La resolución de una imagen es el número de píxeles que contiene en un cierto espacio. Existen dos unidades de medida para representarla: píxeles por pulgada (ppi) y píxeles por centímetro (ppc). La más común es ppi.</p>
+
+		<img src="../img/comparativa_resolucion.jpg" alt="Comparación entre resoluciones de 72ppi y 300ppi">
+
+		<p>Aunque no es posible determinar la calidad de una imagen con base solamente en su resolución, en general mientras mayor sea la resolución de la imagen, más nítida se verá y más claros serán sus detalles.</p>
+
+		<h3>Canales y Profundidad</h3>
+
+		<p>La profundidad de color de una imagen es la cantidad de bits que usa para representar cada color de su modelo de color por un píxel. Mientras más bits de profundidad tenga una imagen, más colores diferentes se podrán representar. Casi todas las imágenes que usan el modelo RGB tienen una profundidad de color de 8 bits, lo que les permite representar 256 tonos distintos por cada color (256 por rojo, 256 por verde y 256 por azul).</p>
+
+		<p>El número de canales de color de una imagen es el número de colores que compone cada uno de sus píxeles. Una imagen monocromática tiene un solo canal (puede ser cualquier color, pero comúnmente el canal es blanco y negro). Las imagenes RGB tienen tres canales, uno por cada color básico RGB, que son sobrepuestos para obtener casi cualquier color.</p>
+	</section>
+
+	<section class="contenido">
+        <h2>Formatos de Imagen</h2>
+
+		<h3>Tamaño de un Archivo de Imagen</h3>
+
+		<p>Una imagen incluye un volumen de información considerablemente mayor al de un archivo de texto común, debido a la cantidad de píxeles en las imágenes durante las últimas décadas. El volumen de la información de una imagen depende directamente de:</p>
+
+		<ol>
+			<li>Tamaño</li>
+			<li>Cantidad de canales</li>
+			<li>Profundidad de color</li>
+		</ol>
+
+		<p>El tamaño de una imagen, sin ningún tipo de compresión, se puede estimar multiplicando el tamaño de una imagen en píxeles por la cantidad de bits usados por pixel. Los bits por pixel dependen del número de canales de color y la profundidad de color de la imagen.</p>
+
+		<p>Por ejemplo, si se tiene una imagen muy pequeña de 200px por 100px, con modelo de color RGB y profundidad de color de 8 bits, su tamaño sería:</p>
+
+		<ul class="serif">
+			<li><b>Píxeles de la imagen:</b> 200 * 100 = 20000px</li>
+			<li><b>Bits por color:</b> 8 * 3 = 24 bits / 3 bytes</li>
+			<li><b>Tamaño del archivo:</b> 20000 px * 3 bytes por pixel = <b>60,000 bytes o ~60 KB</b></li>
+		</ul>
+
+		<h3>Formatos de Imagen Comunes</h3>
+
+		<p>Existe una gran variedad de formatos para almacenar y transferir imágenes digitales. Por lo general, el formato utilizado depende del uso que se le va a dar a la imagen. Si es necesario almacenar una imagen de alta resolución capturada por un fotógrafo profesional, usualmente se opta por sacrificar el tamaño del archivo para obtener una mayor calidad. Si lo que se necesita es una imagen para una publicación en redes sociales o para un anuncio en un sitio web, se suele comprimir la imagen para obtener un archivo más pequeño, a costa de la calidad de la imagen.</p>
+
+		<p>La siguiente tabla muestra algunos de los formatos de imagen más utilizados en la actualidad, incluyendo algunas de sus características. </p>
+
+		<table>
+			<tr>
+				<th>Nombre completo</th>
+				<th>Extensión</th>
+				<th>Compresión</th>
+				<th>Pérdida</th>
+			</tr>
+
+			<tr>
+				<td>
+					<a href="./jpeg.html">
+						Joint Photographic Experts Group
+					</a>
+				</td>
+				<td>JPEG, JPG</td>
+				<td>Sí</td>
+				<td>Sí</td>
+			</tr>
+
+			<tr>
+				<td>
+					<a href="./gif.html">
+						Graphics Interchange Format
+					</a>
+				</td>
+				<td>GIF</td>
+				<td>Sí</td>
+				<td>Sí</td>
+			</tr>
+
+			<tr>
+				<td>
+					<a href="./png.html">
+						Portable Network Graphics
+					</a>
+				</td>
+				<td>PNG</td>
+				<td>Sí</td>
+				<td>No</td>
+			</tr>
+
+			<tr>
+				<td>Tagged Image File Format</td>
+				<td>TIFF</td>
+				<td>Sí</td>
+				<td>No</td>
+			</tr>
+
+			<tr>
+				<td>
+					<a href="./bmp.html">
+						Bit Map
+					</a>
+				</td>
+				<td>BMP</td>
+				<td>No</td>
+				<td>No</td>
+			</tr>
+
+			<tr>
+				<td>Datos en crudo</td>
+				<td>RAW</td>
+				<td>No</td>
+				<td>No</td>
+			</tr>
+		</table> <!-- Tabla breve de formatos -->
+	</section>
+
+	<section class="contenido">
+        <h2>Recursos Informativos</h2>
+        
+        <div class="lista-tarjetas">
+            <a target="blank" href="http://informatica.dgenp.unam.mx/recomendaciones/codigo-ascii">
+                <div class="tarjeta-recurso">
+    
+                    <h4>Código ASCII - UNAM</h4>
+
+                    <span class="material-icons">
+                        open_in_new
+                    </span>
+                </div>
+            </a>
+        </div>
+    </section>
 </body>
 </html>

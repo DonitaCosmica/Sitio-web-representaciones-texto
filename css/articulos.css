@@ -5,8 +5,14 @@ section.contenido {
 }
 
 section.contenido > h2 {
-    font-size: 1.6rem;
-    margin: 0.4rem 0 1rem 0;
+    font-size: 1.8rem;
+    color: #214151;
+    margin: 1.8rem 0 1rem 0;
+}
+
+section.contenido > h3 {
+    font-size: 1.4rem;
+    margin: 2.4rem 0 1rem 0;
 }
 
 section.encabezado-articulo {
@@ -30,7 +36,7 @@ section.encabezado-articulo > h3 {
     font-size: 1.8rem;
 }
 
-section.encabezado-articulo > img {
+section.encabezado-articulo > img, section.contenido > img {
     max-width: 768px;
     margin: 1.6rem auto;
 }
@@ -39,18 +45,26 @@ p {
     text-align: justify;
     font-size: 1rem;
     line-height: 2rem;
-    color: #2b5164;
+    color: #214151;
     margin-bottom: 0.4rem;
 }
 
 section.contenido > ul {
+    margin-bottom: 2.4rem;
     list-style-type: disc;
     font-size: 1rem;
     line-height: 2rem;
     color: #2b5164;
 }
 
-section.contenido > ul > li {
+section.contenido > ol {
+    font-size: 1rem;
+    line-height: 2rem;
+    color: #2b5164;
+    margin-bottom: 2.4rem;
+}
+
+section.contenido > ul > li, section.contenido > ol > li {
     margin-bottom: 0.4rem;
 }
   
@@ -85,4 +99,30 @@ p.fecha {
     padding: 1rem;
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+table, td, th {
+    border: 1px solid;
+}
+
+table {
+    width: 100%;
+    margin: 2.4rem 0;
+    border-collapse: collapse;
+}
+
+th {
+    font-size: 1.2rem;
+    background-color: #97cfeb;
+    padding: 0.6rem 0.4rem;
+}
+
+td {
+    font-size: 1rem;
+    padding: 0.6rem 0.4rem;
+}
+
+td > a {
+    text-decoration: underline;
+    color: #087cb5;
 }
