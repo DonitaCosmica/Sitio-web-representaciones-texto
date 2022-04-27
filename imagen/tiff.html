@@ -124,6 +124,15 @@
             <li>
                 <p>Soporta múltiples capas y transparencias.</p>
             </li>
+            <li>
+                <p>Una ventaja del formato de archivo es su independencia de plataforma, que lo hace adecuado para el intercambio de archivos, independientemente del sistema operativo que se utilice.</p>
+            </li>
+            <li>
+                <p>Para editar un formato TIFF, normalmente es necesario convertir primero la imagen a otro formato.</p>
+            </li>
+            <li>
+                <p>La compresión sin pérdida también da como resultado mayores tamaños de datos que otros formatos gráficos.</p>
+            </li>
         </ol>
 
     </section> <!-- Características -->
@@ -162,72 +171,167 @@
     </section> <!-- Historia --> 
 
     <section class="contenido">
-        <h2>Algoritmo de Codificación</h2>
+        <h2>Algoritmo de Codificación del TIFF</h2>
+
+        <p>
+            LZW es un algoritmo muy rápido tanto para la compresión como para la descompresión, basado en la multiplicidad de aparición de secuencias de caracteres en la cadena que se debe codificar. 
+            Su principio consiste en sustituir patrones con un código de índice y construir progresivamente un diccionario.
+        </p>
 
         <ol>
             <li>
                 <p class="fecha">Paso 1</p>
-
-                <p>Descripción</p>
+                <p>
+                    Inicializar el diccionario con todas las entradas prefijadas. Bits = 9; EntradasPrefijadas = 257 (256 bytes + 1 código especial); 
+                    LimiteDupSecuencias = 512; index = EntradasPrefijadas
+                </p>
             </li>
             <li>
-                <p class="fecha">Paso 1</p>
+                <p class="fecha">Paso 2</p>
 
-                <p>Descripción</p>
+                <p>
+                    Hacer: Leer la entrada actual.
+                </p>
             </li>
             <li>
-                <p class="fecha">Paso 1</p>
+                <p class="fecha">Paso 3</p>
 
-                <p>Descripción</p>
+                <p>
+                    Repetir mientras se localice en el diccionario la secuencia más larga que además contenga la entrada actual.
+                </p>
             </li>
             <li>
-                <p class="fecha">Paso 1</p>
+                <p class="fecha">Paso 4</p>
 
-                <p>Descripción</p>
+                <p>
+                    Emitir a la salida el índice de la secuencia más larga localizada (es el dato a guardar con el actual tamaño de Bits).
+                </p>
+            </li>
+            <li>
+                <p class="fecha">Paso 5</p>
+
+                <p>
+                    Añadir al diccionario (en posición index) la entrada actual apuntando al índice de la secuencia guardada. index +=1
+                </p>
+            </li>
+            <li>
+                <p class="fecha">Paso 6</p>
+
+                <p>
+                    Si el diccionario está lleno, vaciar el diccionario y volver al paso 1.
+                </p>
+            </li>
+            <li>
+                <p class="fecha">Paso 7</p>
+
+                <p>
+                    Si la ocupación del diccionario = LimiteDupSecuencias (duplica el tamaño) a partir de ahora los códigos que se emitan usarán un bit más. 
+                    Bits +=1; LimiteDupSecuencias *=2
+                </p>
+            </li>
+            <li>
+                <p class="fecha">Paso 8</p>
+
+                <p>
+                    Volver al paso 2 hasta fin de fichero
+                </p>
+            </li>
+            <li>
+                <p class="fecha">Paso 9</p>
+
+                <p>
+                    Emitir el código especial de fin de fichero.
+                </p>
             </li>
         </ol>
-    </section> <!-- Algoritmo -->  
-
-    <section class="contenido">
-        <h2>Paso 1</h2>
     </section>
 
     <section class="contenido">
-        <h2>Paso 2</h2>
+        <h2>Propiedad</h2>
+
+        <p>Un fichero Tiff se compone de 3 ficheros</p>
+        <ul>
+            <li>
+                <p>Un fichero de página final (FP).</p>
+            </li>
+            <li>
+                <p>Una fichero de imagen de tono continuo (CT).</p>
+            </li>
+            <li>
+                <p>Una fichero de imagen de línea (LW).</p>
+            </li>
+            <li>
+                <p>Un fichero de tono continuo de alta resolución (HC).</p>
+            </li>
+            <li>
+                <p>Un fichero de binario de trabajo de línea (BL).</p>
+            </li>
+            <li>
+                <p>Un fichero de binario de imagen (BP).</p>
+            </li>
+            <li>
+                <p>Un fichero monocromo de imagen (MP).</p>
+            </li>
+        </ul>
     </section>
 
     <section class="contenido">
-        <h2>Paso 3</h2>
+        <h2>Extensiones</h2>
+
+        <ul>
+            <li>.tiff</li>
+            <li>.tif</li>
+            <li>.fp</li>
+            <li>.lw</li>
+            <li>.ct</li>
+            <li>.hc</li>
+            <li>.mp</li>
+            <li>.bl</li>
+            <li>.bp</li>
+        </ul>
     </section>
 
     <section class="contenido">
-        <h2>Paso 4</h2>
+        <h2>Página Final</h2>
+
+        <p>Fichero de página final (FP) contiene los parámetros de desplazamiento de CT y LW.</p>
     </section>
 
     <section class="contenido">
-        <h2>Datos Interesantes</h2>
+        <h2>Imagne de tono continuo</h2>
 
-        <p>TIFF fue desarrollado en 1986 por las empresas Microsoft y Aldus Corporation como una propuesta de estandarización del intercambio de imágenes. Dado que Aldus fue adquirido por Adobe, esta última posee los derechos sobre el texto de la especificación TIFF y la marca comercial TIFF.</p>
+        <p>El fichero de imagen de tono continuo (CT) contiene imágenes fotográficas.</p>
+    </section>
+
+    <section class="contenido">
+        <h2>Imagen de línea</h2>
+
+        <p>El fichero de imagen de línea (LW) contiene datos de alta resolución como imágenes de línea, dibujos y textos.</p>
+    </section>
+    <section class="contenido">
+        <h2>Directorios de un fichero</h2>
+
+        <p>Para admitir colores directos un fichero TIFF/IT puede contener ficheros MP, que son un fichero de tono continuo de un solo color.</p>
     </section> <!-- Datos interesantes --> 
 
     <section class="contenido">
         <h2>Recursos Informativos</h2>
         
         <div class="lista-tarjetas">
-            <a href="http://informatica.dgenp.unam.mx/recomendaciones/codigo-ascii">
+            <a href="https://www.ionos.mx/digitalguide/paginas-web/diseno-web/que-es-el-formato-tiff/">
                 <div class="tarjeta-recurso">
     
-                    <h4>Código ASCII - UNAM</h4>
+                    <h4>¿Qué es el formatp TIFF? - IONOS</h4>
 
                     <span class="material-icons">
                         open_in_new
                     </span>
                 </div>
             </a>
-            <a href="http://informatica.dgenp.unam.mx/recomendaciones/codigo-ascii">
+            <a href="https://graffica.info/tiff-jpeg-gif-png-formatos-archivos/">
                 <div class="tarjeta-recurso">
     
-                    <h4>Como funciona el Código ASCII</h4>
+                    <h4>CPor qué guardar en un formato u otro? - GRÁFFICA</h4>
 
                     <span class="material-icons">
                         open_in_new

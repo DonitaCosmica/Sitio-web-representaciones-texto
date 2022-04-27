@@ -126,6 +126,15 @@
             <li>
                 <p>Incluye bits de corrección de errores en el archivo de imagen codificado.</p>
             </li>
+            <li>
+                <p>Es un formato de 16 bits introducido en Windows 3.0 del que existe una versión más reciente de 32 bits</p>
+            </li>
+            <li>
+                <p>Admite colores RGB de 24 bits y puede utilizarse en la mayoría de las aplicaciones Windows.</p>
+            </li>
+            <li>
+                <p>Se usa principalmente para las ilustraciones y los dibujos, nunca para fotografías</p>
+            </li>
         </ol>
 
         <h3>Uso de PNG</h3>
@@ -150,70 +159,142 @@
                     Nació a partir de reordenar y expandir el conjunto de símbolos y caracteres ya utilizados por ese entonces en telegrafía por la compañía Bell. 
                 </p>
             </li>
+            <li>
+                <p class="fecha">1988</p>
+                <p>
+                    Aparecen los archivos WMF con el lanzamiento de Windows 2.0
+                </p>
+            </li>
+            <li>
+                <p class="fecha">1992</p>
+                <p>
+                    Microsoft publica la especificación de formato de archivo WMF con el lanzamiento de Windows 3.1
+                </p>
+            </li>
+            <li>
+                <p class="fecha">2005</p>
+                <p>
+                    Se informa de una vulnerabilidad de Microsoft por Symantec. En algunos casos, el motor de renderizado de gráficos permite la ejecución remote de código.
+                </p>
+            </li>
+            <li>
+                <p class="fecha">Enero 2006</p>
+                <p>
+                    Se resuelve la vulnerabilidad en la actualización de seguridad en Microsoft TechNet (MS06-001).
+                </p>
+            </li>
+            <li>
+                <p class="fecha">Septiembre 2006</p>
+                <p>
+                    Windows publica una nueva especificación del formato WMF.
+                </p>
+            </li>
+            <li>
+                <p class="fecha">Actualidad</p>
+                <p>
+                    Microsoft lanzó EMF+ como una extensión del formato de archivo EMF existente.
+                </p>
+            </li>
         </ul>
     </section> <!-- Historia --> 
 
     <section class="contenido">
-        <h2>Algoritmo de Codificación</h2>
+        <h2>Curiosidades del WMF</h2>
 
         <ol>
             <li>
-                <p class="fecha">Paso 1</p>
+                <p class="fecha">UNA PALABRA DE ADVERTENCIA</p>
 
-                <p>Descripción</p>
+                <p>
+                    Tenga cuidado de no cambiar el nombre de la extensión en .WMF  archivos, o cualquier otro archivo. Esto no va a cambiar el tipo de archivo. Sólo el software de conversión especial puede cambiar un archivo de un tipo de archivo a otro.
+                </p>
             </li>
             <li>
-                <p class="fecha">Paso 1</p>
+                <p class="fecha">¿Cómo abrir un archivo .WMF?</p>
 
-                <p>Descripción</p>
-            </li>
-            <li>
-                <p class="fecha">Paso 1</p>
-
-                <p>Descripción</p>
-            </li>
-            <li>
-                <p class="fecha">Paso 1</p>
-
-                <p>Descripción</p>
+                <p>
+                    Poner en marcha una .WMF  archivo, o cualquier otro archivo en su PC, haciendo doble clic en él. Si sus asociaciones de archivos están configurados correctamente, la aplicación que está destinado a abrir la .WMF  archivo se abrirá.
+                </p>
             </li>
         </ol>
     </section> <!-- Datos interesantes -->  
 
     <section class="contenido">
+        <h2>Algoritmo de Codificación</h2>
+
+        <p>
+            Es un formato de gráficos vectoriales que permite también la inclusión de mapas de bits. 
+            Esencialmente, un archivo WMF almacena una secuencia de llamadas a funciones que son enviadas al nivel gráfico de Windows GDI para regenerar la imagen. 
+            Es similar en propósito y diseño al formato PostScript usado en los sistemas operativos Unix.
+        </p>
+    </section>
+
+    <section class="contenido">
         <h2>Paso 1</h2>
+
+        <p>
+            Un mapa de bits, imagen ráster o imagen de píxeles es una estructura o fichero de datos que representa una rejilla rectangular de píxeles o puntos de color.
+        </p>
     </section>
 
     <section class="contenido">
         <h2>Paso 2</h2>
+
+        <p>
+            Las tareas más comunes de GDI son:
+        </p>
+
+        <ul>
+            <li>
+                <p>
+                    El dibujo de líneas, curvas, polígonos.
+                </p>
+            </li>
+            <li>
+                <p>
+                    El relleno de cuadros, círculos, polígonos, etcétera.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Igualmente se encarga del renderizado de fuentes y textos.
+                </p>
+            </li>
+            <li>
+                <p>
+                    El manejo de paletas.
+                </p>
+            </li>
+        </ul>
     </section>
 
     <section class="contenido">
-        <h2>Paso 3</h2>
-    </section>
+        <h2>Formula</h2>
 
-    <section class="contenido">
-        <h2>Paso 4</h2>
+        <p>
+            Utiliza unidades metafile, donde una unidad es un twip (1/20 del punto tipográfico). Dado que el punto tipográfico = 1/72 pulgada, una unidad metafile o twip se corresponde con 1/1440 pulgada.
+            Generalmente las aplicaciones generan ficheros WMF utilizando unidades propias que son mayores que el twip para evitar overflow.
+        </p>
     </section>
 
     <section class="contenido">
         <h2>Recursos Informativos</h2>
         
         <div class="lista-tarjetas">
-            <a href="http://informatica.dgenp.unam.mx/recomendaciones/codigo-ascii">
+            <a href="https://techlandia.com/significado-bmp-hechos_103910/">
                 <div class="tarjeta-recurso">
     
-                    <h4>Código ASCII - UNAM</h4>
+                    <h4>¿Qué es un WMF? - TECHLANDIA</h4>
 
                     <span class="material-icons">
                         open_in_new
                     </span>
                 </div>
             </a>
-            <a href="http://informatica.dgenp.unam.mx/recomendaciones/codigo-ascii">
+            <a href="https://www.reviversoft.com/es/file-extensions/WMF">
                 <div class="tarjeta-recurso">
     
-                    <h4>Como funciona el Código ASCII</h4>
+                    <h4>.WMF - REVIVERSOFT</h4>
 
                     <span class="material-icons">
                         open_in_new

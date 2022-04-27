@@ -106,7 +106,8 @@
         <h2>¿Qué es?</h2>
 
         <p>
-            Es un formato de intercambio de imágenes, que produce un tamaño de archivo muy reducido y soporta la inclusión de varias imágenes secuenciales en un solo archivo, lo que permite crear pequeñas animaciones. Utiliza el espacio de color RGB, con una profundidad de color de 8 bits.
+            consisten en una serie de fotogramas que se suceden entre sí, creando una animación sin sonido que se repite en forma de bucle entre 5 y 10 segundos (con excepciones, claro). 
+            Estos cuentan con un máximo de 256 colores, por lo que son más livianos que los videos pero más dinámicos que las imágenes convencionales, tomando lo mejor de ambos formatos.
         </p>
     </section> <!-- Informacion general -->
 
@@ -131,13 +132,13 @@
     </section> <!-- Características -->
             
     <section class="contenido">
-        <h2>Historia y Versiones</h2>
+        <h2>Historia</h2>
 
         <p>GIF fue creado en 1987 por Steve Wilhite, que en ese momento trabajaba para la empresa CompuServe.</p>
 
         <ul>
             <li>
-                <p class="fecha">1963</p>
+                <p class="fecha">1987</p>
                 <p>
                     Fue creado por el Comité Estadounidense de Estándares o "ASA", cambio su nombre por "ANSI".
                 </p>
@@ -146,70 +147,225 @@
                     Nació a partir de reordenar y expandir el conjunto de símbolos y caracteres ya utilizados por ese entonces en telegrafía por la compañía Bell. 
                 </p>
             </li>
+            <li>
+                <p class="fecha">90s</p>
+                <p>
+                    Sus primeras versiones no se movían, pero no tardo en incorporar esta característica.
+                </p>
+                <p>
+                    En los 90s cuando LLegaron las animaciones, compitieron con SWF, PNG y JPEG.
+                </p>
+            </li>
+            <li>
+                <p class="fecha">2012</p>
+                <p>
+                    En 2012, la Oxford University Press de los Estados Unidos escogió GIF como «Palabra del Año».
+                </p>
+            </li>
+            <li>
+                <p class="fecha">Actualmente</p>
+                <p>
+                    Se pueden enviar gif animados en todas las redes sociales y hasta tienen un boton exclusivo.
+                </p>
+            </li>
         </ul>
-    </section> <!-- Historia --> 
+    </section> <!-- Historia -->
 
     <section class="contenido">
-        <h2>Algoritmo de Codificación</h2>
+        <h2>Versiones</h2>
+
+        <p>Existen 2 versiones del formato GIF: GIF87a y GIF89a.</p>
+
+        <ul>
+            <li>
+                <p class="fecha">GIF87a</p>
+                <p>
+                    Es la especificación original, y está disponible desde 1987. Tiene ompresión LZW, sin pérdidas y entrelazado.
+                </p>
+                <p>
+                    La compresión sin pérdidas significa que el fichero comprimido tiene la misma información que el fichero sin comprimir. Por su parte, 
+                    el sistema de entrelazado consiste en cargar la imagen en varias etapas, mostrando el gráfico antes de que esté completamente cargado.
+                </p>
+            </li>
+            <li>
+                <p class="fecha">GIF89a</p>
+                <p>
+                    La versión GIF89a añade dos nuevas características a la anterior: transparencia y animación.
+                </p>
+                <p>
+                    La transparencia permite definir un color de la paleta como transparente. Esta característica puede resultar interesante al diseñar una página web, 
+                    ya que podemos integrar mejor un gráfico, mostrando lo que está directamente por debajo del mismo.
+                </p>
+            </li>
+        </ul>
+    </section>
+
+    <section class="contenido">
+        <h2>Algoritmo de Codificación del GIF</h2>
+
+        <p>
+            LZW es un algoritmo muy rápido tanto para la compresión como para la descompresión, basado en la multiplicidad de aparición de secuencias de caracteres en la cadena que se debe codificar. 
+            Su principio consiste en sustituir patrones con un código de índice y construir progresivamente un diccionario.
+        </p>
 
         <ol>
             <li>
                 <p class="fecha">Paso 1</p>
-
-                <p>Descripción</p>
+                <p>
+                    Inicializar el diccionario con todas las entradas prefijadas. Bits = 9; EntradasPrefijadas = 257 (256 bytes + 1 código especial); 
+                    LimiteDupSecuencias = 512; index = EntradasPrefijadas
+                </p>
             </li>
             <li>
-                <p class="fecha">Paso 1</p>
+                <p class="fecha">Paso 2</p>
 
-                <p>Descripción</p>
+                <p>
+                    Hacer: Leer la entrada actual.
+                </p>
             </li>
             <li>
-                <p class="fecha">Paso 1</p>
+                <p class="fecha">Paso 3</p>
 
-                <p>Descripción</p>
+                <p>
+                    Repetir mientras se localice en el diccionario la secuencia más larga que además contenga la entrada actual.
+                </p>
             </li>
             <li>
-                <p class="fecha">Paso 1</p>
+                <p class="fecha">Paso 4</p>
 
-                <p>Descripción</p>
+                <p>
+                    Emitir a la salida el índice de la secuencia más larga localizada (es el dato a guardar con el actual tamaño de Bits).
+                </p>
+            </li>
+            <li>
+                <p class="fecha">Paso 5</p>
+
+                <p>
+                    Añadir al diccionario (en posición index) la entrada actual apuntando al índice de la secuencia guardada. index +=1
+                </p>
+            </li>
+            <li>
+                <p class="fecha">Paso 6</p>
+
+                <p>
+                    Si el diccionario está lleno, vaciar el diccionario y volver al paso 1.
+                </p>
+            </li>
+            <li>
+                <p class="fecha">Paso 7</p>
+
+                <p>
+                    Si la ocupación del diccionario = LimiteDupSecuencias (duplica el tamaño) a partir de ahora los códigos que se emitan usarán un bit más. 
+                    Bits +=1; LimiteDupSecuencias *=2
+                </p>
+            </li>
+            <li>
+                <p class="fecha">Paso 8</p>
+
+                <p>
+                    Volver al paso 2 hasta fin de fichero
+                </p>
+            </li>
+            <li>
+                <p class="fecha">Paso 9</p>
+
+                <p>
+                    Emitir el código especial de fin de fichero.
+                </p>
             </li>
         </ol>
-    </section> <!-- Datos interesantes -->  
+    </section>  
 
     <section class="contenido">
-        <h2>Paso 1</h2>
+        <h2>Fueron diseñados en la época de los módem telefónicos</h2>
+        <p>
+            Wilhite comenzó a usar los GIF como una forma de presentar imágenes fijas y poder mostrar imágenes a buena resolución pese a que la conexión fuera lenta (como lo era la de esa época).
+        </p>
+        <p>
+            El primero que creó fue "una foto de un avión", según le contó el propio Wilhite a la publicación tecnológica Daily Dot. En él se veía una aeronave volando con un fondo de nubes.
+        </p>
+        <p>
+            En ese momento, todavía no existía la World Wide Web. Pero con el paso de los años -y el auge de sitios web como 4chan, Reddit y Tumblr y, posteriormente, de las redes sociales- los GIF se convirtieron en todo un fenómeno de internet.
+        </p>
     </section>
 
     <section class="contenido">
-        <h2>Paso 2</h2>
+        <h2>"Sólo" pueden soportar hasta 256 colores</h2>
+        <p>
+            Los GIFs animados solamente permiten usar una paleta de hasta 256 colores (8 bits por píxel).
+        </p>
+        <p>
+            Pueden parecer muchos, sin embargo, esta poca profundidad de color hace que pierda calidad con respecto a otros formatos de imagen actuales.
+        </p>
     </section>
 
     <section class="contenido">
-        <h2>Paso 3</h2>
+        <h2>Uno de sus primeros usos fue la publicidad</h2>
+        <p>
+            Si bien es cierto que al principio muchos blogueros y usuarios de foros en internet usaron los GIF como algo decorativo o por puro entretenimiento, pronto comenzaron a adoptar un uso comercial.
+        </p>
+        <p>
+            Los GIF animados se usan desde hace tiempo para atraer visitantes en sitios web en forma de banners (anuncios digitales).
+        </p>
+        <p>
+            Varias plataformas, entre ellas Google, han promovido su uso entre los publicistas a través de campañas CPC (de coste por clic).
+        </p>
+        <p>
+            Hoy es el rey de internet y se promociona como una opción atractiva y económica para transmitir todo tipo de mensajes, ya sean comerciales o personales.
+        </p>
     </section>
 
     <section class="contenido">
-        <h2>Paso 4</h2>
+        <h2>"Time" fue el primer medio en publicar un GIF en portada</h2>
+        <p>
+            La revista estadounidense "Time" fue la primera en incluir un GIF en su portada. Fue un artículo de septiembre de 2014 en el que hablaba sobre cómo la tecnología de Apple "está invadiendo nuestros cuerpos".
+        </p>
+        <p>
+            En ella mostraba una imagen animada de una muñeca con gráficos y números en movimiento.
+        </p>
     </section>
+
+    <section class="contenido">
+        <h2>"Es una g suave, y se pronuncia "yif"</h2>
+        <p>
+            En mayo de 2013, Wilhite dejó claro cómo se pronuncia GIF, pues parece ser que muchos, a su parecer, no lo hacían correctamente.
+        </p>
+        <p>
+            De acuerdo con el ingeniero, no debe pronunciarse con una "g" fuerte (como en guitarra), sino con una "g" débil.
+        </p>
+        <p>
+            "Es una 'g' de pronunciación suave: 'yif'. Fin de la historia", dijo al ser consultado por el diario The New York Times.
+        </p>
+    </section><!-- Datos interesantes --> 
 
     <section class="contenido">
         <h2>Recursos Informativos</h2>
         
         <div class="lista-tarjetas">
-            <a href="http://informatica.dgenp.unam.mx/recomendaciones/codigo-ascii">
+            <a href="https://www.nobbot.com/redes/historia-de-los-gifs/#:~:text=Los%20GIF%20nacieron%20a%20finales,l%C3%ADnea%20de%20los%20Estados%20Unidos.">
                 <div class="tarjeta-recurso">
     
-                    <h4>Código ASCII - UNAM</h4>
+                    <h4>Historia de los GIF - NOBBOT</h4>
 
                     <span class="material-icons">
                         open_in_new
                     </span>
                 </div>
             </a>
-            <a href="http://informatica.dgenp.unam.mx/recomendaciones/codigo-ascii">
+            <a href="https://www.fotonostra.com/digital/gif.htm">
                 <div class="tarjeta-recurso">
     
-                    <h4>Como funciona el Código ASCII</h4>
+                    <h4>Formato de archivo GIF</h4>
+
+                    <span class="material-icons">
+                        open_in_new
+                    </span>
+                </div>
+            </a>
+            <a href="https://rockcontent.com/es/blog/que-son-los-gifs/">
+                <div class="tarjeta-recurso">
+    
+                    <h4>¿Qué son los GIFs?</h4>
 
                     <span class="material-icons">
                         open_in_new
