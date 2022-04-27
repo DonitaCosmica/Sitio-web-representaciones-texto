@@ -172,6 +172,10 @@ a {
   background-color: rgba(96, 180, 223, 0.6);
 }
 
+.no-overflow {
+  overflow: hidden;
+}
+
 .overlay-container {
   max-width: 65rem;
   margin: 0 auto;

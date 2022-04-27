@@ -6,144 +6,319 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/articulos.css">
 
     <title>Imagen | JPEG</title>
 </head>
 <body>
+    <header>
+		<div class="container">
+			<input type="checkbox" name="" id="check">
+			<div class="logo-container">
+				<a class="logo" href="../index.html">Estándares <span>Multi</span>Media</a>
+			</div>
+			<div class="nav-btn">
+				<div class="nav-links">
+					<ul>
+						<li class="nav-link dropdown-btn" style="--i: 0.6s">
+							<a href="../fundamentos/index.html">Fundamentos</a>
+
+							<ul>
+								<li class="dropdown-link">
+									<a href="../fundamentos/multimedia.html">Multimedia</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="../fundamentos/compresion.html">Compresión</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="../fundamentos/algoritmos.html">Algoritmos</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="../fundamentos/recursos.html">Recursos Informativos</a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-link dropdown-btn" style="--i: 0.85s">
+							<a href="./index.html">Texto</a>
+
+							<ul>
+								<li class="dropdown-link">
+									<a href="../texto/ascii.html">ASCII</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="../texto/unicode.html">Unicode</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="../texto/postscript.html">PostScript</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="../texto/pdf.html">PDF</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="../texto/rtf.html">RTF</a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-link dropdown-btn" style="--i: 1.1s">
+							<a href="./index.html">Imagen</a>
+
+							<ul>
+								<li class="dropdown-link">
+									<a href="./jpeg.html">JPEG</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="./png.html">PNG</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="./bmp.html">BMP</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="./gif.html">GIF</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="./wmf.html">WMF</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="./comparacion.html">Comparación</a>
+								</li>
+								<li class="dropdown-link">
+									<a href="./raster.html">Datos Raster</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="hamburger-menu-container">
+				<div class="hamburger-menu">
+					<div></div>
+				</div>
+			</div>
+		</div>
+  	</header> <!-- Barra de navegación -->
     
-    <div class="titulo">
-        <h1></h1>
-    </div>
+    <section class="encabezado-articulo">
+        <h1 class="titulo">Joint Photographic Experts Group (JPEG)</h1>
 
-    <section class="contenido">  
-        <div class="subtitulo">
-            <h2>¿Qué es?</h2>
-        </div>
+        <h3>Imagen</h3>
 
-        <p>
-            Es un código de caracteres que tiene su base en el alfabeto romano. 
-            Sirve para convertir un carácter que forma parte de un lenguaje natural (como una letra de un alfabeto) en un símbolo que pertenece a otra clase de sistema representativo.
-        </p>
-
-        <p>
-            Estandariza la traducción de letras y símbolos a números como ‘a=97’ o ‘/=47’.
-
-            Establece una correspondencia entre estas cadenas y los símbolos que representan. Esto hace que se facilite el almacenamiento y el procesamiento de información en una computadora y la comunicación entre diferentes aparatos digitales.
-        </p>
-    </section> <!-- Informacion general -->
+        <img src="../img/jpeg_encabezado.jpg" alt="Un ejemplo de imagen JPEG.">
+    </section>
 
     <section class="contenido">
-        <div class="subtitulo">
-            <h2>Características</h2>
-        </div>
-        
-        <p>
-            Estandarizar la representación de texto en el intercambio y manejo de información en la comunicación electrónica. 
-        </p>
+        <h2 id="jpeg-que-es">¿Qué es?</h2>
 
-        <p>
-            Su primer uso comercial fue en un teleprinter de siete bits por los servicios de datos de Bell Labs. Durante la segunda mitad del siglo XX fue el principal estándar usado por las computadoras y telecomunicaciones en Estados Unidos.
-        </p>
-    </section> <!-- Características -->
+        <p>JPEG es un formato de codificación con pérdidas de imágenes dígitales. Es capaz de comprimir imágenes hasta casi un octavo de su tamaño de archivo original, pero deliberadamente pierde información. Esto significa que si una imagen es codificada con JPEG y luego se revierte el proceso de codificación, la imagen resultante será diferente que la imagen original.</p>
+
+        <p>Es uno de los formatos más utilizados en la web, debido a su tamaño de archivo reducido y su calidad aceptable.</p>
+    </section>
 
     <section class="contenido">
-        <div class="subtitulo">
-            <h2>Algoritmo de Compresión</h2>
-        </div>
-        
-        <p>
-            Estandarizar la representación de texto en el intercambio y manejo de información en la comunicación electrónica. 
-        </p>
+        <h2 id="jpeg-historia">Historia y Versiones</h2>
 
-        <p>
-            Su primer uso comercial fue en un teleprinter de siete bits por los servicios de datos de Bell Labs. Durante la segunda mitad del siglo XX fue el principal estándar usado por las computadoras y telecomunicaciones en Estados Unidos.
-        </p>
-    </section> <!-- Algoritmo de compresión -->
-            
-    <section class="contenido">
-        <div class="subtitulo">
-            <h2>Historia y Versiones</h2>
-        </div>
+        <p>JPEG fue introducido en 1992, resultado de un proceso de investigación y desarrollo que había comenzado en 1986. La especificación cita trabajos de investigación y patentes relacionadas a los algoritmos y procesos que utiliza, tales como la DCT y la codificación Huffman.</p>
 
         <ul>
             <li>
-                <p>1963</p>
+                <p class="fecha">1992</p>
                 <p>
-                    Fue creado por el Comité Estadounidense de Estándares o "ASA", cambio su nombre por "ANSI".
+                    Fue publicada la primera versión del estándar JPEG, compuesta por cuatro partes separadas.
                 </p>
 
-                <p>
-                    Nació a partir de reordenar y expandir el conjunto de símbolos y caracteres ya utilizados por ese entonces en telegrafía por la compañía Bell. 
-                </p>
+                <p>Utilizando un método de compresión basado en la Transformación Discreta del Coseno (DCT), JPEG 1 es capaz de codificar imágenes de grandes tamaños y comprimirlas a una fracción mínima de su tamaño de archivo original.</p>
             </li>
-
+    
             <li>
-                <p>1967</p>
+                <p class="fecha">1997 - 2000</p>
                 <p>
-                    Se agregaron las letras minúsculas y algunos caracteres de control, formando así lo que se conoce como US-ASCII, es decir los códigos del 0 al 127. 
+                    JPEG 2000, también conocido como JPEG 2, que tuvo el objetivo de sobrepasar el rendimiento de la primera versión. La diferencia clave entre ambos estándares es que JPEG 1 utiliza un algoritmo de compresión basado en la DCT, mientras que JPEG 2000 usa un método basado en transformaciones de ondículas.
                 </p>
-
+    
                 <p>
-                    Así con este conjunto de solo 128 caracteres fue publicado como estándar, conteniendo todos lo necesario para escribir en idioma ingles.
+                    Las principales ventajas de JPEG 2000 son la posibilidad de codificar una sola vez el contenido con una calidad específica (hasta sin pérdidas), para luego decodificarlo y acceder a él con calidad y resolución variables, o por regiones de interés.
                 </p>
-            </li>
-
-            <li>
-                <p>1996</p>
-                <p>
-                    El Comité Estadounidense de Estándares o "ASA” cambio su nombre por "Instituto Estadounidense de Estándares Nacionales" o "ANSI" como se lo conoce actualmente.
-                </p>
-
-                <p>
-                    IBM desarrolló una extensión de 8 bits del código ASCII, llamada "página de código 437":
-                </p>
-
-                <ul>
-                    <li>Remplazo algunos caracteres de control obsoletos, por caracteres gráficos.</li>
-                    <li>Incorporar 128 caracteres nuevos, con símbolos, signos, gráficos adicionales y letras latinas.</li>
-                </ul>
-
-                <p>Se sumaron los caracteres que van del ASCII 128 al 255.</p>
             </li>
         </ul>
-    </section> <!-- Historia y Versiones --> 
+
+        <a href="#jpeg-algoritmo">Algoritmo</a>
+    </section>
 
     <section class="contenido">
-        <div class="subtitulo">
-            <h2>Datos Interesantes</h2>
-        </div>
+        <h2 id="jpeg-caracteristicas">Características</h2>
 
         <ul>
             <li>
-                La representación binaria en ASCII del 0-9 comienza con los mismos cuatro bits (0011) en su parte más significativa. 
+                <p>Soporta un tamaño máximo de imagen de 65,535 píxeles por 65,535 píxeles</p>
             </li>
+
             <li>
-                La representación binaria ASCII de cada letra en mayúscula y minúscula tiene los mismos bits, a excepción de uno (“a” es 110 0001 y “A” es 100 0001.
+                <p>Su factor de compresión es típicamente de 50% a 75% del tamaño de archivo original. La compresión máxima llega a casi el 90% del tamaño original.</p>
             </li>
+
             <li>
-                Los caracteres están agrupados por tipo y, en el caso de las letras y números, ordenados por orden alfabético y ascendente, respectivamente.
+                <p>Su formato de archivo oficial, JIF, es poco utilizado. Otros formatos como JFIF y EXIF solucionan la mayoría de los puntos débiles de JIF.</p>
             </li>
+
             <li>
-                Existe una corriente artística que usa caracteres ASCII para representar imágenes.
-            </li>
-            <li>
-                Hay un cinturón de asteroides con el nombre “3568 ASCII”, en honor al estándar ASCII.
-            </li>
-            <li>
-                El ASCII publicado en 1963 tenía una flecha apuntando hacia arriba (↑) en lugar del acento circunflejo (^) actual y una flecha apuntando hacia la izquierda en lugar del guión bajo (_).
-            </li>
-            <li>
-                Los 32 primeros caracteres son "de control" sin embargo son empleados por dispositivos, como las impresoras o procesadores, para controlar el texto. Estos códigos no son imprimibles y aunque ya están obsoletos todavía funcionan normalmente.
+                <p>Las terminaciones de nombre de archivo más comunes son .jpg, .jpeg, .jif, .jfif y .jpe.</p>
             </li>
         </ul>
-    </section> <!-- Datos interesantes -->  
+    </section>
 
     <section class="contenido">
-        <div class="subtitulo">
-            <h2>Recursos Informativos</h2>
+        <h2 id="jpeg-algoritmo">Algoritmo de Codificación JPEG</h2>
+
+        <p>El proceso de codificación de una imagen raw a una imagen JPEG sigue los siguientes pasos (es aplicado a cada canal de color YCBCR):</p>
+
+        <img src="../img/algoritmo_compresion_jpeg.webp" alt="Diagrama del agoritmo de codificacion JPEG.">
+
+        <ol>
+            <li>
+                <p class="fecha">Tratamiento de Color</p>
+
+                <p>El proceso de tratamiento de color recibe la imagen original con modelo RGB y realiza dos procedimientos sobre ella: el cambio del modelo de color al modelo YCbCr y el "sub-muestreo cromático" o "down-sampling cromático".</p>
+            </li>
+            <li>
+                <p class="fecha">Transformación Discreta del Coseno</p>
+
+                <p>Este paso subdivide la imagen en bloques de 8px de lado, y luego aplica la Transformación Discreta del Coseno (DCT) en los valores de color de cada bloque.</p>
+            </li>
+            <li>
+                <p class="fecha">Cuantización</p>
+
+                <p>La matriz con los coeficientes DCT es dividida por una matriz de cuantización indicada según los parámetros de codificación. Este paso involucra una pérdida de información deliberada.</p>
+            </li>
+            <li>
+                <p class="fecha">Codificador sin pérdidas</p>
+
+                <p>Finalmente, se aplican dos algoritmos de codificación: una variante de Run-length encoding (RLE) y el algoritmo de codificación de Huffman o codificación Aritmética (Huffman es más común).</p>
+            </li>
+        </ol>
+    </section>
+
+    <section class="contenido">
+        <h2>Tratamiento de Color</h2>
+
+        <p>El primer paso del proceso de tratamiento de color es la representación de la imagen original en el espacio de color YCBCR.</p>
+
+        <p>El espacio de color YCBCR incluye tres componentes: Y (luma o luminisencia), Cb (croma azul) y Cr (croma rojo). Los espacios de color YCBCR son definidos por una transformación matemática de coordenadas de los primarios RGB.</p>
+
+        <img src="../img/ycbcr.jpg" alt="Descomposición de una imagen en el espacio YCBCR.">
+
+        <p>El propósito de la transformación del espacio de color de la imagen es propiciar el sub-muestreo cromático, o en su defecto, el down-sampling cromático.</p>
+
+        <h3>Sub-muestreo Cromático</h3>
+
+        <p>El ojo humano es mucho más sensible a la luminosidad (qué tan brillante es cada pixel de una imagen) que a los colores. JPEG aprovecha este factor para realizar la primera etapa de compresión de la información de la imagen a través de sub-muestreo cromático.</p>
+
+        <p>Este proceso es aplicado en los componentes croma (Cb y Cr) de la imagen en el espacio de color YCBCR. Su objetivo es reducir la cantidad de muestras de información en los componentes de color, dado que no afectan tan visiblemete la calidad de la imagen resultante.</p>
+
+        <p>El codificador recorre la imagen por bloques de cierto tamaño. Por cada bloque, el codificador obtiene el promedio del color de todos los píxeles del bloque (en el caso de down-sampling) o el color del píxel en la esquina superior izquierda del bloque (en el caso de sub-muestreo). En vez de almacenar los componentes cromáticos Cb y Cr "completos", el sub-muestreo cromático disminuye drásticamente la información portada por los componentes de color, manteniendo el componente luma intacto.</p>
+
+        <p>Existen diversos factores de sub-muestreo cromático, incluyendo: 4:1:1, 4:2:0, 4:2:2, 4:4:4 y 4:4:0.</p>
+
+        <p>Por ejemplo, si se tiene una imagen de 8px por 8px (64px total) y se aplica un sub-muestreo cromático 4:2:0, el tamaño del archivo resultante sería aproximadamente 50% del de la imagen original. Esto se debe a que en vez de utilizar 64 píxeles por canal, los canales Cb y Cr pueden representarse con solamente 16 píxeles.</p>
+
+        <p>Aunque el efecto del sub-muestreo cromático es perceptible en imágenes pequeñas, en imágenes más grandes (más de 200 píxeles) sus efectos son casi indistinguibles.</p>
+    </section>
+
+    <section class="contenido">
+        <h2>Transformación discreta del coseno</h2>
+
+        <p>Si se considera el cambio en la luminosidad entre dos píxeles dados como la "frecuencia" de una señal, las imágenes digitales pueden ser tratadas como señales. JPEG se aprovecha de este hecho para codificar imágenes usando la Transformación Discreta del Coseno para lograr comprimir aún más.</p>
+
+        <p>La gran mayoría de las imágenes realistas tienen más componentes de bajas frecuencias que de altas frecuencias. En otras palabras, es más probable que un segmento de una imagen contenga varios píxeles adyacentes de luminosidad similar que secciones con cambios abruptos en la luminosidad. Asimismo, el ojo humano es mucho menos sensible a los detalles con cambios abruptos de luminosidad (o "frecuencia" de la imagen).</p>
+
+        <p>La DCT es una formula matemática que permite expresar una secuencia finita de puntos como el resultado de la suma de varias señales sinusoidales. JPEG aplica la DCT a cada bloque 8x8 resultante del paso anterior y produce una matriz 8x8 por cada bloque, donde los componentes individuales de menor frecuencia son ordenados hacia la esquina superior izquierda de la matriz, mientras que los de mayor frecuencia quedan en la esquina opuesta.</p>
+
+
+    </section>
+
+    <section class="contenido">
+        <h2>Cuantización</h2>
+
+        <p>La cuantización sigue una idea muy simple: cada valor de frecuencia en la matriz 8x8 resultante de aplicar la DCT es dividido por un valor correspondiente en una matriz de cuantización 8x8, para luego ser redondeado a un entero.</p>
+
+        <p>Es importante recordar que en la matriz resultante de la DCT, los valores mayores se encuentran en la esquina superior derecha de la matriz. Las matrices de cuantización son lo opuesto: los valores más grandes se encuentran en la esquina inferior derecha.</p>
+
+        <img src="../img/cuantización.png" alt="Aplicación de una matriz de cuantización.">
+
+        <p>Como resultado, los valores mayores resultantes de la DCT mantienen una proporción similar, mientras que los valores menores, que son la mayoría, son reducidos a 0 o a números cercanos a 0.</p>
+
+        <p>La cuantización permite a JPEG aprovechar una última fase de compresión por medio de algoritmos sin pérdidas para reducir valores redundantes.</p>
+
+        <p>Este paso pierde información al reducir datos a 0. Esto significa que si a una matriz cuantizada se le aplica la operación inversa con la misma matriz de cuantización, la matriz resultante será diferente a la original.</p>
+
+        <p>Las posibles matrices de cuantización para los codificadores están especificadas en el estándar JPEG.</p>
+    </section>
+    <section class="contenido">
+        <h2>Codificación sin pérdidas</h2>
+
+        <p>JPEG utiliza una versión específica de Run-length Encoding y el algoritmo de codificación de Huffman para maximizar la compresión de los resultados de la cuantización.</p>
+
+        <h3>RLE de JPEG</h3>
+
+        <p>Primero, la matriz resultante de la cuantización se recorre en zig-zag, diagonalmente. Esto tiene la intención de agrupar la mayor cantidad de ceros en la menor cantidad de grupos.</p>
+
+        <img src="../img/cuantización-zig-zag.png" alt="Recorrido de la matriz cuantizada.">
+
+        <p>La versión común de Run-length encoding comprime datos redundantes almacenando un conjunto con el dato y el número de datos redundantes que le siguen. Por ejemplo, si encuentra tres ceros contiguos, RLE los comprime como "0[x3]".</p>
+
+        <p>Sin embargo, JPEG almacena tríos de valores en su implementación de RLE. Un trío de valores, representado como [(r, s), c], contiene: </p>
+
+        <ul>
+            <li>
+                <p>
+                    <b>r</b>: número de ceros que preceden al valor.
+                </p>
+                <p>
+                    <b>s</b>: número de bits requeridos para codificar el valor del coeficiente.
+                </p>
+                <p>
+                    <b>c</b>: el valor del coeficiente.
+                </p>
+            </li>
+        </ul>
+
+        <p>Un conjunto de datos comprimidos por LRE de JPEG suele visualizarse como el siguiente:</p>
+
+        <p>{[(0, 7), 78], [(0, 6), -38], [(1, 3), 4], [(3, 4), 17]}</p>
+
+        <p>En este caso, los valores 4 y 17 (los últimos 2 valores) son precedidos por grupos de ceros con longitudes de 1 y 3, respectivamente.</p>
+
+        <h3>Huffman</h3>
+
+        <p>Finalmente, JPEG comprime aún más los datos de imagen aplicando el algoritmo de codificación de Huffman a los datos comprimidos por RLE en el paso anterior.</p>
+    </section>
+
+    <section class="contenido">
+        <h2>Recursos Informativos</h2>
+        
+        <div class="lista-tarjetas">
+            <a href="https://jpeg.org/index.html">
+                <div class="tarjeta-recurso">
+    
+                    <h4>JPEG - Joint Photographic Experts Group</h4>
+
+                    <span class="material-icons">
+                        open_in_new
+                    </span>
+                </div>
+            </a>
+        </div>
+        <div class="lista-tarjetas">
+            <a href="https://signalsprocessingup.files.wordpress.com/2011/12/dct.pdf">
+                <div class="tarjeta-recurso">
+    
+                    <h4>La DCT para Compresión de Imágenes</h4>
+
+                    <span class="material-icons">
+                        open_in_new
+                    </span>
+                </div>
+            </a>
         </div>
     </section> <!-- Recursos -->
 </body>
