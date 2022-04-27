@@ -72,7 +72,7 @@
 									<a href="./png.html">PNG</a>
 								</li>
 								<li class="dropdown-link">
-									<a href="./bmp.html">BMP</a>
+									<a href="./tiff.html">BMP</a>
 								</li>
 								<li class="dropdown-link">
 									<a href="./gif.html">GIF</a>
@@ -231,7 +231,21 @@
 
         <p>La gran mayoría de las imágenes realistas tienen más componentes de bajas frecuencias que de altas frecuencias. En otras palabras, es más probable que un segmento de una imagen contenga varios píxeles adyacentes de luminosidad similar que secciones con cambios abruptos en la luminosidad. Asimismo, el ojo humano es mucho menos sensible a los detalles con cambios abruptos de luminosidad (o "frecuencia" de la imagen).</p>
 
-        <p>La DCT es una formula matemática que permite expresar una secuencia finita de puntos como el resultado de la suma de varias señales sinusoidales. JPEG aplica la DCT a cada bloque 8x8 resultante del paso anterior y produce una matriz 8x8 por cada bloque, donde los componentes individuales de menor frecuencia son ordenados hacia la esquina superior izquierda de la matriz, mientras que los de mayor frecuencia quedan en la esquina opuesta.</p>
+        <p>La DCT es una formula matemática que permite expresar una secuencia finita de puntos como el resultado de la suma de varias señales sinusoidales. La definición matemática de la DCT es la siguiente:</p>
+        
+        <img src="../img/formula_dct.svg" alt="Formula de la DCT.">
+
+        <p>Donde f(j) es una función discreta, j = 0, 1, 2 ..., N -1 y c(k) es la inversa de la raíz cuadrada de 2 si k = 0 y c(k) es 1 para todos los demás enteros hasta N-1.</p>
+            
+        <p>JPEG aplica la DCT a cada bloque 8x8 resultante del paso anterior y produce una matriz 8x8 por cada bloque, donde los componentes individuales de menor frecuencia son ordenados hacia la esquina superior izquierda de la matriz, mientras que los de mayor frecuencia quedan en la esquina opuesta.</p>
+
+        <p>Como las imágenes son bidimensionales y los bloques son matrices 8x8, JPEG aplica la DCT bidimensional. Esto involucra primero aplicar la DCT unidimensional a cada fila de la matriz, obtieniendo una matriz "intermedia" con coeficientes. Luego, JPEG aplica la DCT unidimensional a cada columna de la matriz intermedia, produciendo una matriz 8x8 con los coeficientes DCT del bloque de la imagen.</p>
+        
+        <p>La siguiente imagen representa el resultado de la DCT bidimensional aplicada sobre un bloque 8x8.</p>
+
+        <img src="../img/dct_2d.jpg" alt="Aplicación de la DCT bidimensional al componente Y">
+
+        <p>La primera columna de bloques y la primera fila de bloques de la imagen anterior corresponden a los patrones producidos por la DCT unidimensional, mientras que los demás bloques son patrones compuestos por los resultados de la DCT unidimensional. En general, se puede construir cualquier imagen 8x8 utilizando los 64 patrones de la imagen anterior.</p>
 
 
     </section>

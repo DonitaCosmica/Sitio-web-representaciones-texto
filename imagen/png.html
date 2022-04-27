@@ -100,6 +100,10 @@
         <h1 class="titulo">Portable Network Graphics (PNG)</h1>
 
         <h3>Imagen</h3>
+        
+        <img src="../img/platano.png" alt="Una imagen de un plátano en formato PNG.">
+
+        <p>(Si se arrastra la imagen de los plátanos, se puede notar que su fondo es totalmente transparente)</p>
     </section>
 
     <section class="contenido">  
@@ -125,6 +129,9 @@
             </li>
             <li>
                 <p>Incluye bits de corrección de errores en el archivo de imagen codificado.</p>
+            </li>
+            <li>
+                <p>PNG suele ser drásticamente más lento durante la codificación que otros algoritmos de imagen.</p>
             </li>
         </ol>
 
@@ -180,54 +187,124 @@
     <section class="contenido">
         <h2>Algoritmo de Codificación</h2>
 
+        <p>PNG utiliza un proceso de compresión de dos etapas:</p>
+
         <ol>
             <li>
-                <p class="fecha">Paso 1</p>
+                <p class="fecha">Filtrado</p>
 
-                <p>Descripción</p>
+                <p>El algoritmo DEFLATE es muy útil para aprovechar la redundancia en los datos de una imagen. Para facilitar la compresión, PNG "prepara" la imagen aplicando uno de 5 filtros diferentes.</p>
             </li>
             <li>
-                <p class="fecha">Paso 1</p>
+                <p class="fecha">Algoritmo de compresión sin pérdidas DEFLATE</p>
 
-                <p>Descripción</p>
-            </li>
-            <li>
-                <p class="fecha">Paso 1</p>
-
-                <p>Descripción</p>
-            </li>
-            <li>
-                <p class="fecha">Paso 1</p>
-
-                <p>Descripción</p>
+                <p>Este algoritmo de uso libre involucra una combinación de LZ77 y codificación Huffman para lograr la compresión de la imagen sin ninguna pérdia de información.</p>
             </li>
         </ol>
+
+        <p>Al ser un formato de imagen sin pérdidas, el proceso de codificación puede ser ejecutado a la inversa para la decodificación y la imagen decodificada será exactamente igual a la imagen originalmente codificada.</p>
     </section> <!-- Datos interesantes -->  
 
     <section class="contenido">
-        <h2>Paso 1</h2>
+        <h2>Filtrado</h2>
+
+        <p>El algoritmo de compresión DEFLATE, basado en LZ77 y codificación Huffman, tiene un rendimiento inadecuado cuando no es capaz de encontrar valores redundantes en los datos de la imagen. Esto puede suceder aún cuando la información de la imagen posee patrones que son claramente aprovechables por su redundancia, tales como diferencias similares.</p>
+
+        <p>Por ejemplo, si una fila de bytes de una imagen tiene valores totalmente distintos, pero estos valores tienen una diferencia de 6 con respecto al byte anterior, se podría representar la fila como un valor inicial seguido las diferencias de todos los valores siguientes, con respecto a sus valores anteriores. Una fila como { 20, 26, 32, 38, 44 } produciría una fila similar a { 20, 6, 6, 6, 6 }, que puede ser comprimida como { 20, (4, 6)}.</p>
+
+        <img src="../img/filtros_png.png" alt="Matriz con ejemplo de filtrado PNG.">
+
+        <p>Para aprovechar esto, PNG utiliza cinco diferentes filtros en su primera etapa de codificación:</p>
+
+        <ol>
+            <li>
+                <p class="fecha">Ninguno</p>
+
+                <p>Este filtro no realiza ninguna transformación sobre la información de la imagen.</p>
+            </li>
+
+            <li>
+                <p class="fecha">SUB</p>
+                
+                <p>Este filtro produce como resultado la diferencia entre el valor del byte actual y el valor del byte anterior, módulo 256 (por los valores de 8 bits). </p> 
+                
+                <p>Por ejemplo, el byte con valor "140", con "133" como su byte anterior, produciría un byte resultante de "7". Un byte con valor "140" con "151" como su byte anterior resultaría en "245", dado que los bytes no tienen signo y el valor anterior es mayor que el actual.</p>
+            </li>
+
+            <li>
+                <p class="fecha">UP</p>
+                
+                <p>El filtro "superior" o "arriba" realiza la misma operación de diferencia que el filtro SUB, pero en vez de usar el valor del byte anterior toma el valor del byte directamente sobre el byte actual (si se representa como una matriz de bytes, tomaría el byte en la fila anterior a la del byte actual).</p>
+            </li>
+
+            <li>
+                <p class="fecha">PROMEDIO</p>
+
+                <p>El filtro "promedio" realiza una diferencia del byte actual con el promedio del byte a su izquierda y el byte arriba el byte actual.</p>
+            </li>
+
+            <li>
+                <p class="fecha">"PAETH"</p>
+
+                <p>Es el filtro con la operación más compleja de todos los filtros. En general, solo "elige" el mejor píxel de entre los 3 vecinos del píxel actual para obtener un mejor resultado.</p> 
+                
+                <p>Dados los bytes I (Izquierda), A (Arriba) e IA (Arriba a la izquierda). Inicia obteniendo un valor base "B", realizando la operación B = A + I - IA. Luego obtiene 3 valores, definidos como la diferencia entre el valor B con cada uno de los tres valores de byte iniciales. Determina el menor valor de estos 3 nuevos valores y lo resta al valor del byte actual, para obtener el resultado del filtro.</p>
+            </li>
+        </ol>
+
+        <p>Como es de esperar, ciertos filtros producen mejores resultados con ciertos patrones de datos. PNG determina cuál es el mejor filtro para una fila dada por medio de la "suma mínima de diferencias absolutas". Esta operación es realizada por cada uno de los 5 filtros, por cada fila de la imagen. El filtro que produzca los resultados con la menor diferencia absoluta entre ellos es elegido como el filtro aplicado a la fila. En general, mientras menos varíen los datos resultantes de un filtro, mejores serán los resultados de compresión del algoritmo DEFLATE.</p>
     </section>
 
     <section class="contenido">
-        <h2>Paso 2</h2>
-    </section>
+        <h2>DEFLATE</h2>
 
-    <section class="contenido">
-        <h2>Paso 3</h2>
-    </section>
+        <p>En la segunda etapa de la codificación, PNG utiliza el algoritmo de compresión Lempel-Ziv, publicado en 1977. Este algoritmo consiste en buscar coincidencias de datos existentes en los bytes siguientes del byte actual, para poder almacenarlos como una referencia a los datos existentes.</p>
 
-    <section class="contenido">
-        <h2>Paso 4</h2>
+        <p>LZ77 tiene dos componentes fundamentales: una "ventana deslizante" y un "buffer de avistamiento" o "Look Ahead Buffer." Ambos elementos forman lo que se conoce como el "buffer de búsqueda", que tiene una longitud equivalente a la suma de la longitud de los dos elementos que lo forman.</p>
+
+        <p>PNG utiliza un tamaño de ventana deslizante de aproximadamente 32 kB, con la intención de aumentar la posibilidad de encontrar coincidencias.</p>
+
+        <p>Para realizar la compresión, la ventana deslizante y el bufer de avistamiento se colocan de manera contigua y los datos de la imagen son recorridos, byte por byte, de derecha a izquierda. Esto se muestra en la siguiente imagen:</p>
+
+        <img src="../img/ventana_deslizante_lz77.png" alt="Ventana deslizante y buffer de LZ77.">
+
+        <p>Cada vez que la información se recorre una posición a la izquierda, el algoritmo revisa si existen coincidencias entre los bytes en el buffer de avistamiento y cualquier cadena en la ventana deslizante. Es importante notar que busca la coincidencia con mayor longitud. De esta manera, si se encuentran "a" y "ab" como coincidencias de "ab" en el buffer, el algoritmo creará una referencia a la segunda. LZ77 de PNG solo crea una referencia si la cadena tiene una longitud mayor o igual a 3.</p>
+
+        <p>Cada referencia creada por el algoritmo contiene dos datos: la longitud de la cadena comprimida y el offset entre el inicio de la cadena original (en la ventana deslizante) y el inicio de la cadena coincidente.</p>
+
+        <p>En la imagen anterior, existe una coincidencia para la cadena "abraca". LZ77, en vez de recorrer un caracter, remueve la cadena coincidente y crea una referencia con una longitud de 6 valores y un offset de 7.</p>
+
+        <p>Finalmente, PNG utiliza una versión específica del algoritmo de codificación Huffman para reducir aún más los valores individuales resultantes del proceso de compresión con LZ77.</p>
     </section>
 
     <section class="contenido">
         <h2>Recursos Informativos</h2>
         
         <div class="lista-tarjetas">
-            <a href="http://informatica.dgenp.unam.mx/recomendaciones/codigo-ascii">
+            <a href="https://www.ecured.cu/Portable_Network_Graphics_(PNG)">
                 <div class="tarjeta-recurso">
     
-                    <h4>PNG</h4>
+                    <h4>Portable Network Graphics (PNG)</h4>
+
+                    <span class="material-icons">
+                        open_in_new
+                    </span>
+                </div>
+            </a>
+            <a href="https://www.ecured.cu/Lz77">
+                <div class="tarjeta-recurso">
+    
+                    <h4>Algoritmo LZ77 - EcuRed</h4>
+
+                    <span class="material-icons">
+                        open_in_new
+                    </span>
+                </div>
+            </a>
+            <a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-wusp/fb98aa28-5cd7-407f-8869-a6cef1ff1ccb">
+                <div class="tarjeta-recurso">
+    
+                    <h4>LZ77 Compression Algorithm</h4>
 
                     <span class="material-icons">
                         open_in_new
