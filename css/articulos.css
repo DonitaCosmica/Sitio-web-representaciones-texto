@@ -93,12 +93,15 @@ p.fecha {
 .lista-tarjetas > a > .tarjeta-recurso {
     min-height: 4.8rem;
     max-height: 7rem;
-    /* max-width: 20rem; */
     margin-left: 1rem;
     overflow: hidden;
     padding: 1rem;
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.lista-tarjetas > a > .tarjeta-recurso > h4 {
+    text-transform: uppercase;
 }
 
 table, td, th {
