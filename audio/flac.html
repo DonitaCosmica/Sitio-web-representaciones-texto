@@ -263,6 +263,131 @@
     </section> <!-- Datos interesantes --> 
 
     <section class="contenido">
+        <h2>Esructura de codificación</h2>
+
+        <ol>
+            <li>
+                <p class="fecha">Señal de audio</p>
+                <p>
+                    Un audio es una señal analógica eléctricamente exacta a una señal sonora; normalmente está acotada al rango de frecuencias audibles por los seres humanos, que está aproximadamente entre los 20 y los 20.000 Hz.
+                </p>
+            </li>
+            <li>
+                <p class="fecha">Blocking</p>
+                <p>
+                    Esta etapa divide la señal de audio de entrada en bloques contiguos o porciones de un tamaño específico. El tamaño óptimo del bloque generalmente se ve afectado por muchos factores. Aunque FLAC permite que el tamaño del bloque varíe dentro de una transmisión, el codificador de referencia usa un tamaño de bloque fijo.
+                </p>
+                <p>
+                    El tamaño usado para dividir en bloques los datos del audio tiene un efecto directo en la relación de compresión. Si el bloque es demasiado pequeño, el número total de bloques aumentará, desperdiciando bits en la codificación de encabezados, de lo contrario, las características de la señal pueden variar tanto que el codificador tendrá problemas de editabilidad y de poder ajustar correctamente la señal o calcular los parámetros de codificación óptimos para el predictor.
+                </p>
+                <p>
+                    Para simplificar el diseño del codificador/decodificador, FLAC impone un tamaño de bloque mínimo de 16 samples y un tamaño de bloque máximo de 65535 samples.
+                </p>               
+            </li>
+            <li>
+                <p class="fecha">Prediction</p>
+                <p>
+                    El codificador intenta encontrar una descripción matemática de la señal (aproximación), esta descripción es usualmente mucho más pequeña que la señal original. FLAC permite que la clase de predictor cambie de un bloque a otro, o incluso dentro de los canales de un bloque.
+                </p>
+
+                <h3>Modelo Predictivo</h3>
+
+                <p>
+                    Se basa en utilizar un sistema de predicción lineal que genera, para cada trama, una señal discreta de error, e[n]. Los parámetros del predictor representan la redundancia que es eliminada de la señal. Es capaz de predecir el valor de una muestra x[n] a partir del valor de las muestras precedentes: x[n − 1], x[n − 2].
+                </p>
+
+                <img src="../img/prediction.png" alt="Modelo predictivo">
+            </li>
+            <li>
+                <p class="fecha">Inter-channel Decorrelation</p>
+                <p>
+                    La etapa de descorrelación entre canales o intercanal elimina la redundancia en las señales de estéreo. Al codificar los canales izquierdo y derecho en un canal central se puede reducir el número de bits necesarios para almacenar la señal. En casos donde los canales derecho e izquierdo son muy diferentes se puede pasar sin ninguna descorrelación.
+                </p>
+
+                <h3>Canales</h3>
+                <p>
+                    <ul>
+                        <li>
+                            <h4>Independiente</h4>
+                            <p>
+                                Los canales izquierdo y derecho son codificados de forma independiente.
+                            </p>
+                        </li>
+                        <li>
+                            <h4>Central</h4>
+                            <p>
+                                Los canales son transformados en un canal central (punto medio) y en un canal lateral (diferencia).
+                            </p>
+                        </li>
+                        <li>
+                            <h4>Izquierdo</h4>
+                            <p>
+                                El canal izquierdo y el lateral son codificados.
+                            </p>
+                        </li>
+                        <li>
+                            <h4>Derecho</h4>
+                            <p>
+                                El canal izquierdo y el lateral son codificados
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+            </li>
+            <li>
+                <p class="fecha">Entropy Coding</p>
+                <p>
+                    Se trata la redundancia estadística, que es la que se produce por no usar un código fuente óptimo. Para buscar ese código fuente óptimo, se toman como referencia los valores estadísticos de la señal para eliminar este tipo de redundancia. El objetivo de la codificación es obtener una representación eficiente de los símbolos de la señal. Tiene como objetivo eliminar la redundancia de la señal obtenida, e[n].
+                </p>
+                <img src="../img/Formula-flac.png" alt="Formula">
+                <p>
+                    La entropía determina el límite máximo al que se puede comprimir un mensaje usando un enfoque símbolo a símbolo sin ninguna pérdida de información, el límite de compresión (en bits) es igual a la entropía multiplicada por el largo del mensaje. Su cálculo se realiza a partir de su distribución de probabilidad p(x) mediante la siguiente fórmula:
+                </p>
+                <img src="../img/formula.jpg" alt="Formula">
+
+                <p>
+                    Su principio básico es que se asignan códigos más cortos a símbolos con mayor probabilidad de aparición. Por tanto, la longitud del código será:
+                </p>
+
+                <img src="../img/Principio-codificacion-entropica.jpg" alt="Principio">
+                <p>
+                    Dónde L(xi) representa la longitud (bits) del símbolo codificado.
+                </p>
+            </li>
+            <li>
+                <p class="fecha">Señal comprimida</p>
+                <p>
+                    La compresión de audio es una forma de compresión de datos, específicamente en la reducción del tamaño de los archivos de audio. Los algoritmos de compresión de audio normalmente son llamados códecs de audio.
+                </p>
+            </li>
+        </ol>
+    </section>
+
+    <section class="contenido">
+        <h2>Efectividad de compresión</h2>
+
+        <p>
+            FLAC es el acrónimo en inglés de un formato o mejor dicho codec de compresión sin pérdida cuyas siglas corresponden a las de “Free Lossless Audio Codec”. El audio digital comprimido por este algoritmo viene a reducirse típicamente entre un 50 y un 60% de su tamaño original, descomprimiéndose posteriormente en una copia idéntica lo que se consigue mediante la predicción lineal para convertir las muestras de datos en series de pequeños números no correlativos (conocidos como "residuos") que se almacenan eficientemente usando la codificación Golomb-Rice. 
+        </p>
+
+        <p>
+            Además de esto, para aprovechar los silencios donde los valores numéricos presentan mucha repetición, el algoritmo del FLAC usa un método de codificación por longitud de pista o "RLE“ (Run-Length Encoding") para muestras idénticas.
+        </p>
+    </section>
+
+    <section class="contenido">
+        <h2>Pérdida de datos</h2>
+
+        <p>
+            A diferencia de otros formatos para la compresión del tamaño de los ficheros de música como el MP3, WMA, AAC u Ogg Vorbis, que sí que tienen aunque sea en mayor o menor medida pérdidas de calidad al basarse todos ellos en la reducción del tamaño de los ficheros o tracks por eliminación de ciertas frecuencia.
+        </p>
+
+        <p>
+            El formato o codec FLAC es ideal para la música por cuanto con él se logra reducir el tamaño de los archivos originales en PCM-WAV a prácticamente la mitad sin que se pierda absolutamente nada de calidad como si se tratara de un ZIP o un RAR especialmente ideado para la música, lo que ha hecho que el FLAC se convierta en uno de los formatos preferidos para la venta de música por Internet.
+        </p>
+    </section>
+
+    <section class="contenido">
         <h2>Curiosidades y Datos Interesantes</h2>
 
         <ul>

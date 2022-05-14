@@ -131,44 +131,244 @@
     </section>
 
     <section class="contenido">  
-        <h2>¿Qué es?</h2>
+        <h2>Introducción</h2>
 
-        
+		<img src="../img/Ventajas-del-formato-ogg-respecto-el-mp3.jpg" alt="MP3 vs OGG">
+
+		<p>
+			Como el formato MP3, es una forma de compresión que reduce algunos de los datos de audio y se denomina "compresión con pérdida". 
+		</p>
+
+		<p>
+			Lo que distingue al formato Ogg Vorbis es que es un formato completamente gratuito, abierto y sin patente; a diferencia de sus competidores principales como el formato MP3 o AAC. Esto significa que el algoritmo de compresión se puede utilizar libremente por todos los productores de software.
+		</p>
+
+		<h2>¿Qué es OGG?</h2>
+
+		<img src="../img/icono-de-formato-Ogg.jpg" alt="Icono OGG">
+
+        <p>
+			Ogg es el nombre del formato contenedor de Xiph.org para audio, video y metadatos.
+		</p>
+
+		<p>
+			No es solo un códec de vídeo o de audio, sino que es un contenedor que comprende audio, video y subtítulos.
+		</p>
+
+		<h2>¿Qué es Vorbis</h2>
+
+		<img src="../img/vorbis.webp" alt="Icono Vorbis">
+
+		<p>
+			Vorbis es el nombre de un codec ó esquema de compresión de audio con pérdida, que está diseñado para estar dentro del contenedor Ogg. 
+		</p>
+
     </section> <!-- Informacion general -->
 
     <section class="contenido">
-        <h2>Propósito del Estándar</h2>
+        <h2>Características</h2>
+
+		<ul>
+			<li>
+				<p>
+					OGG Vorbis admite un mínimo de dos canales y un máximo de 256 canales,  y, puede reproducir sonidos en sistemas que utilizan canales 5.1 o 7.1.
+				</p>
+			</li>
+			<li>
+				<p>
+					OGG Vorbis tiene mejor calidad de sonido que otros tipos de archivos como MP3.
+				</p>
+			</li>
+			<li>
+				<p>
+					El archivo comprimido del formato OGG Vorbis es más pequeño que el de MP3.
+				</p>
+				<p>
+					Mientras que a un mp3 de 128 kbps le tomaría 10.3MB al ogg le tomaría sólo 7.1MB, sin conllevar alguna pérdida de calidad.
+				</p>
+			</li>
+			<li>
+				<p>
+
+					La tasa de bits de compresión en OGG Vorbis es variable, cambia según la necesidad del archivo.
+				</p>
+			</li>
+			<li>
+				<p>
+					La extensión de nombre de archivo .ogg se usaba para todos los datos cuyos materiales de contenido usaban el formato de contenedor Ogg. Desde 2007, la Fundación Xiph.Org recomienda que .ogg se utilice únicamente para datos de audio Ogg Vorbis.
+				</p>
+			</li>
+			<li>
+				<p>
+					Vorbis incluye un campo de comentarios completo y flexible para la información de la canción y el artista, así como otros datos de la pista. Permite ingresar información de comentarios en el momento de la codificación. Otras herramientas también permiten ingresar y editar datos de seguimiento.
+				</p>
+			</li>
+			<li>
+				<p>
+					Reproducir un archivo ogg consume más recursos que reproducir un mp3 lo que puede reducir la duración de la batería.				</p>
+			</li>
+			<li>
+				<p>
+					Su frecuencia va desde los 8kHz a los 48.0kHz, es polifónico y sus tasas de bits fijas y variables son de 16 a 128 kbps/canal.
+				</p>
+			</li>
+			<li>
+				<p>
+					Existen reproductores de audio que no reproducen .ogg, además de que es menos usado que otros formatos como MP3 o AAC. (Por algo no existe el reproductor ogg pero sí reproductores MP3)
+				</p>
+			</li>
+		</ul>
         
     </section> <!-- Proposito del estandar -->
             
     <section class="contenido">
         <h2>Historia y Versiones</h2>
 
+		<ul>
+			<li>
+				<p class="fecha">1993</p>
+				<p>
+					Inicialmente, el código fuente de Ogg/Vorbis estaba basado en un proyecto anterior iniciado inicialmente por Christopher Montgomery en 1993. 
+				</p>
+			</li>
+			<li>
+				<p class="fecha">1998</p>
+				<p>
+					Se desarrolló el código fuente utilizado en las versiones actuales de Ogg/Vorbis, poco después de que Fraunhofer decidiera fortalecer su control de MP3 y amenazó con demandar a los proyectos MP3 gratuitos.
+				</p>
+			</li>
+			<li>
+				<p class="fecha">2002</p>
+				<p>
+					La primera versión de códec estable, 1.0, se lanzó el 19 de julio de 2002. Esta versión cumple al estándar Vorbis I.
+				</p>
+			</li>
+		</ul>
     </section> <!-- Historia --> 
+
+	<section class="contenido">
+		<h2>Compresión del formato</h2>
+
+		<ol>
+			<li>
+				<p class="fecha">Implementación</p>
+				<p>
+					Los algoritmos de compresión de audio se implementan en el software como Códecs de audio. 
+				</p>
+			</li>
+			<li>
+				<p class="fecha">Compresión por pérdida</p>
+				<p>
+					Tanto en la compresión con pérdida como en la sin pérdida, se reduce la redundancia de la información mediante el uso de métodos como la codificación, la cuantificación, la transformación discreta del coseno y la predicción lineal para reducir la cantidad de información utilizada para representar los datos sin comprimir.
+				</p>
+			</li>
+			<li>
+				<p class="fecha">Cóficador Vorbis</p>
+				<p>
+					El codificador de vorbis es únicamente un método para aceptar audio de entrada, dividirlo en tramas individuales y comprimir estas tramas en "paquetes" sin formato. 
+				</p>
+			</li>
+			<li>
+				<p class="fecha">Decodificador</p>
+				<p>
+					Luego, el decodificador acepta estos paquetes sin procesar en secuencia, los decodifica, sintetiza tramas de audio a partir de ellos y vuelve a ensamblar las tramas en una representación del flujo de audio original.
+				</p>
+			</li>
+		</ol>
+	</section>
+
+	<section class="contenido">
+		<h2>Efectividad de compresión y porcentaje de pérdida</h2>
+
+		<p>
+			La relación de compresión/tasa de error de Vorbis, usando la configuración de la más alta calidad da como resultado una relación de compresión del 37,84%, lo que provoca solo una tasa de error de compresión promedio de 3,24 dB.
+		</p>
+	</section>
 
     <section class="contenido">
         <h2>Curiosidades y Datos Interesantes</h2>
 
+		<ul>
+			<li>
+				<p class="fecha">Nombre</p>
+				<p>
+					Si el nombre «Ogg» te suena extraño, es porque se deriva de un antiguo término de juego llamado «ogging». El juego Netrek de 1988 fue uno de los primeros juegos multijugador en línea, y «ogging» se refería a un ataque al estilo kamikaze contra una nave o base enemiga. 
+				</p>
+			</li>
+			<li>
+				<p class="fecha">Vorbis</p>
+				<p>
+					Además, el nombre «Vorbis» proviene de un personaje del libro Small Gods de Terr Pratchett.
+				</p>
+			</li>
+			<li>
+				<p class="fecha">Spotify</p>
+				<p>
+					Spotify es famoso por usar OGG como su formato de archivo de audio predeterminado. Esto solía estar indicado en su documentación, pero en la actualidad se ha eliminado.
+				</p>
+			</li>
+			<li>
+				<p class="fecha">Código abierto</p>
+				<p>
+					Ogg vorbis es libre y abierto para que la comunidad pueda seguir mejorándolo ininterrumpidamente.
+				</p>
+			</li>
+			<li>
+				<p class="fecha">Comparación</p>
+				<p>
+					Hay un artículo en internet que compara a dos archivos (un .mp3 y un .ogg) con respecto a su archivo original, en diferentes valores de kbps. El archivo en cuestión es la canción Near Wild Heaven. 
+				</p>
+			</li>
+			<li>
+				<p class="fecha">MP3 y OGG explicado con tuercas</p>
+				<p>
+					Hay un video ruso en YouTube que explica con tuercas y tornillos la diferencia entre la compresión del .mp3, .aac y .ogg.
+				</p>
+			</li>
+		</ul>
     </section> <!-- Datos interesantes -->  
 
     <section class="contenido">
         <h2>Recursos Informativos</h2>
         
         <div class="lista-tarjetas">
-            <a href="http://informatica.dgenp.unam.mx/recomendaciones/codigo-ascii">
+            <a href="https://xiph.org/vorbis/doc/Vorbis_I_spec.html">
                 <div class="tarjeta-recurso">
     
-                    <h4>Código ASCII - UNAM</h4>
+                    <h4>Funadación Xiph.org - Xiph</h4>
 
                     <span class="material-icons">
                         open_in_new
                     </span>
                 </div>
             </a>
-            <a href="http://informatica.dgenp.unam.mx/recomendaciones/codigo-ascii">
+            <a href="https://es.ccm.net/contents/49-ogg-vorbis">
                 <div class="tarjeta-recurso">
     
-                    <h4>Como funciona el Código ASCII</h4>
+                    <h4>Características OGG - ccm</h4>
+
+                    <span class="material-icons">
+                        open_in_new
+                    </span>
+                </div>
+            </a>
+        </div>
+
+		<div class="lista-tarjetas">
+            <a href="https://www.xataka.com/basics/que-formato-ogg-como-abrir-sus-archivos-windows-10">
+                <div class="tarjeta-recurso">
+    
+                    <h4>¿Qué es el formato OGG? - Xataka</h4>
+
+                    <span class="material-icons">
+                        open_in_new
+                    </span>
+                </div>
+            </a>
+            <a href="https://xiph.org/vorbis/faq/#names">
+                <div class="tarjeta-recurso">
+    
+                    <h4>FAQ - Xiph</h4>
 
                     <span class="material-icons">
                         open_in_new
