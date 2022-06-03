@@ -4,16 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/articulos.css">
-
-    <title>Estándares de Texto</title>
+    <title>Document</title>
 </head>
 <body>
-
+    
     <header>
 		<div class="container">
 			<input type="checkbox" name="" id="check">
@@ -42,23 +38,23 @@
 							</ul>
 						</li>
 						<li class="nav-link dropdown-btn" style="--i: 0.85s">
-							<a href="../texto/index.html">Texto</a>
+							<a href="./index.html">Texto</a>
 
 							<ul>
 								<li class="dropdown-link">
-									<a href="../texto/ascii.html">ASCII</a>
+									<a href="./ascii.html">ASCII</a>
 								</li>
 								<li class="dropdown-link">
-									<a href="../texto/unicode.html">Unicode</a>
+									<a href="./unicode.html">Unicode</a>
 								</li>
 								<li class="dropdown-link">
-									<a href="../texto/postscript.html">PostScript</a>
+									<a href="./postscript.html">PostScript</a>
 								</li>
 								<li class="dropdown-link">
-									<a href="../texto/pdf.html">PDF</a>
+									<a href="./pdf.html">PDF</a>
 								</li>
 								<li class="dropdown-link">
-									<a href="../texto/rtf.html">RTF</a>
+									<a href="./rtf.html">RTF</a>
 								</li>
 							</ul>
 						</li>
@@ -159,108 +155,149 @@
 			</div>
 		</div>
   	</header> <!-- Barra de navegación -->
-    
-    <section class="encabezado-articulo">
-        <h1 class="titulo">Representación de Texto</h1>
+
+	<section class="encabezado-articulo">
+        <h1 class="titulo">MKV</h1>
+
+        <h3>Video</h3>
+
+
+
     </section>
-    
-	<section class="contenido">
-		<h2>¿Qué es una representación de texto?</h2>
+
+    <section class="contenido">  
+        <h2>¿Qué es?</h2>
+
+		<img src="../img/mkv-icon.jpg" alt="MKV" style="width: 200px;">
 
 		<p>
-			El texto se representa como una cadena larga de bits en la cual los sucesivos patrones representan los sucesivos símbolos del texto original. En resumen, se puede representar cualquier información escrita (texto) mediante caracteres.
+			MKV es un formato contenedor, lo que significa que permite embeber múltiples secuencias de archivos en uno solo, usualmente junto con metadatos que las identifican.
 		</p>
 
-		<img src="../img/REPRESENTACION-DE-LA-INFORMACION-EN-LAS-COMPUTADORAS2-1024x682.jpg" alt="Texto">
-	</section>
+		<p>
+			MKV hace referencia a una de las posibles extensiones que pueden tener los archivos “Matroska Multimedia Container”, otras posibles extensiones son:
+		</p>
+
+		<ul>
+			<li>
+				<p>
+					.mk3d
+				</p>
+			</li>
+			<li>
+				<p>
+					.mka
+				</p>
+			</li>
+			<li>
+				<p>
+					.mks
+				</p>
+			</li>
+		</ul>
+
+    </section> <!-- Informacion general -->
+
+    <section class="contenido">
+        <h2>Características</h2>
+
+		<ul>
+			<li>
+				<p class="fecha">Conenido</p>
+				<p>
+					Puede contener una cantidad ilimitada de pistas de audio, video y subtítulos.
+				</p>
+			</li>
+			<li>
+				<p class="fecha">Búsqueda</p>
+				<p>
+					Cuenta con marcadores y metadatos para la búsqueda dentro del archivo.
+				</p>
+			</li>
+			<li>
+				<p class="fecha">Capitulación</p>
+				<p>
+					Cuenta con entradas que marcan capítulos del contenido.
+				</p>
+			</li>
+			<li>
+				<p class="fecha">Metadatos</p>
+				<p>
+					Contiene una trama de metadatos para la identificación de secciones del archivo.
+				</p>
+			</li>
+			<li>
+				<p class="fecha">Ampliación</p>
+				<p>
+					Al ser de código abierto, es posible ampliarse mediante módulos.
+				</p>
+			</li>
+			<li>
+				<p class="fecha">Menús</p>
+				<p>
+					Cuenta con soporte para menús al estilo de los DVDs.
+				</p>
+			</li>
+		</ul>
+
+    </section> <!-- Proposito del estandar -->
 
 	<section class="contenido">
-        <h2>Formatos de Texto</h2>
+        <h2>Codecs soportados</h2>
 
-        <table>
-			<tr>
-				<th>Nombre completo</th>
-				<th>Abreviación</th>
-				<th>Compresión</th>
-				<th>Pérdida</th>
-			</tr>
+		<p>
+			MKV es un formato construido sobre EBML (Extensible Binary Meta Language), un tipo de archivo formulado como una extensión binaria de XML, y sigue el mismo modelo separando sintaxis y semántica. Esto posibilita que una biblioteca genérica EBML pueda leer cualquier formato que se funde en ella.
+		</p>
 
-			<tr>
-				<td>
-					<a href="./ascii.html">
-						Código Estadounidense Estándar para el Intercambio de Información
-					</a>
-				</td>
-				<td>ASCII</td>
-				<td>Sí</td>
-				<td>Sí</td>
-			</tr>
+		<p>
+			Al contar con EBML como base, Matrioska tiene una alta flexibilidad, y admite prácticamente cualquier formato de audio y video.
+		</p>
 
-			<tr>
-				<td>
-					<a href="./pdf.html">
-						Formato de Documento Portátil
-					</a>
-				</td>
-				<td>PDF</td>
-				<td>Sí</td>
-				<td>Sí</td>
-			</tr>
+		<ul>
+			<li>
+				<p>
+					Video: MPEG-1, MPEG-2, MPEG-4, H.263, H.264, etc.
+				</p>
+			</li>
+			<li>
+				<p>
+					Audio: Ogg, FLAC, MP3, ACC, etc.
+				</p>
+			</li>
+		</ul>
 
-			<tr>
-				<td>
-					<a href="./postscript.html">
-						Page Description Language
-					</a>
-				</td>
-				<td>POSTSCRIPT</td>
-				<td>Sí</td>
-				<td>No</td>
-			</tr>
-
-			<tr>
-				<td>
-                    <a href="./rtf.html">
-                        Rich Text Format
-                    </a>
-                </td>
-				<td>RTF</td>
-				<td>Sí</td>
-				<td>No</td>
-			</tr>
-
-			<tr>
-				<td>
-					<a href="./unicode.html">
-						Unicode
-					</a>
-				</td>
-				<td>UNICODE</td>
-				<td>No</td>
-				<td>No</td>
-			</tr>
-
-		</table> <!-- Tabla breve de formatos -->
-	</section>
+    </section> <!-- Historia --> 
 
 	<section class="contenido">
+        <h2>Estructura General Archivo EBML</h2>
+
+		<p>
+			Cada archivo Matroska contiene dos elementos raíz, la cabecera y uno o múltiples segmentos, sin embargo, no es común usar más de un segmento.
+		</p>
+
+		<img src="../img/archivo-ebml.png" alt="Archivo EBML">
+
+    </section> <!-- Historia --> 
+
+    <section class="contenido">
         <h2>Recursos Informativos</h2>
         
         <div class="lista-tarjetas">
-            <a href="http://informatica.dgenp.unam.mx/recomendaciones/codigo-ascii">
+            <a href="https://www.xataka.com/basics/que-son-y-como-ver-archivos-mkv-en-el-ordenador">
                 <div class="tarjeta-recurso">
     
-                    <h4>Código ASCII - UNAM</h4>
+                    <h4>Qué son y cómo ver archivos mkv en el ordenador - xataka</h4>
 
                     <span class="material-icons">
                         open_in_new
                     </span>
                 </div>
             </a>
-            <a href="http://informatica.dgenp.unam.mx/recomendaciones/codigo-ascii">
+
+			<a href="https://www.matroska.org/index.html">
                 <div class="tarjeta-recurso">
     
-                    <h4>Como funciona el Código ASCII</h4>
+                    <h4>¿Qué es matroska? - Matroska</h4>
 
                     <span class="material-icons">
                         open_in_new
